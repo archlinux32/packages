@@ -1,0 +1,6 @@
+##
+## Arch Linux repository mirrorlist for i686
+## Generated on 2017-04-24 (by hand)
+##
+
+# Server = https://mirror.archlinux32.org/$arch/$repo
