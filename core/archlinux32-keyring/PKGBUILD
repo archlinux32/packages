@@ -1,0 +1,15 @@
+pkgname=archlinux32-keyring
+pkgver=20170515
+pkgrel=1
+pkgdesc='Arch Linux 32 PGP keyring'
+arch=('any')
+url='http://archlinux32.org'
+license=('GPL')
+install="${pkgname}.install"
+source=("https://github.com/archlinux32/$pkgname/archive/v$pkgver.tar.gz")
+sha512sums=('5e53ff4b167339b04fcb47c954e0383ed8656b79a9d48e15a958bd1a996ab94446285ddc93646019a3e485552647daf394c14aeea91175255c7745c900c58ff1')
+
+package() {
+    cd "${srcdir}/${pkgname}-"* # ${pkgver}"
+    make PREFIX=/usr DESTDIR=${pkgdir} install
+}
