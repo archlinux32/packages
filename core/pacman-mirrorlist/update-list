@@ -1,0 +1,13 @@
+#!/bin/bash
+
+cd "${0%/*}"
+
+printf "pkgver=%s\n" "$(date '+%Y%m%d')" > PKGBUILD
+printf "sha256sums=('%s')\n" "$(
+  sha256sum mirrorlist | \
+    awk '{print $1}'
+)" >> PKGBUILD
+printf "md5sums=('%s')\n" "$(
+  md5sum mirrorlist | \
+    awk '{print $1}'
+)" >> PKGBUILD

@@ -4,4 +4,5 @@
 ##
 
 # Server = https://mirror.archlinux32.org/$arch/$repo
+# Server = http://mirror.archlinux32.oss/$arch/$repo
 # Server = http://32.arlm.tyzoid.com/$arch/$repo
