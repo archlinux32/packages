@@ -1,1 +1,3 @@
 archiso
+gcc-multilib
+valgrind-multilib
