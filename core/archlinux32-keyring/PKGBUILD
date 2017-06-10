@@ -1,3 +1,4 @@
+# Maintainer: Erich Eckner <deep42thought@archlinux32.org>
 pkgname=archlinux32-keyring
 pkgver=20170515
 pkgrel=1

@@ -2,12 +2,13 @@
 
 cd "${0%/*}"
 
-printf "pkgver=%s\n" "$(date '+%Y%m%d')" > PKGBUILD
-printf "sha256sums=('%s')\n" "$(
-  sha256sum mirrorlist | \
-    awk '{print $1}'
-)" >> PKGBUILD
-printf "md5sums=('%s')\n" "$(
-  md5sum mirrorlist | \
-    awk '{print $1}'
-)" >> PKGBUILD
+sed -i '/^[^#]/d' PKGBUILD
+printf "pkgver=%s\n" "$(date '+%Y%m%d')" >> PKGBUILD
+for sum_type in sha256 md5; do
+  printf "%ssums=('%s')\n" \
+    "${sum_type}" \
+    "$(
+      ${sum_type}sum mirrorlist | \
+        awk '{print $1}'
+    )" >> PKGBUILD
+done
