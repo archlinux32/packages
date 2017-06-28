@@ -8,7 +8,7 @@ url='http://archlinux32.org'
 license=('GPL')
 install="${pkgname}.install"
 source=("https://github.com/archlinux32/$pkgname/archive/v$pkgver.tar.gz")
-sha512sums=('5e53ff4b167339b04fcb47c954e0383ed8656b79a9d48e15a958bd1a996ab94446285ddc93646019a3e485552647daf394c14aeea91175255c7745c900c58ff1')
+sha512sums=('3c088e02bda95dfa4e72a3afd6e934f8920fb5befaea1080d40cc5594ff77c8bff0f994028b7d371411c35cf4959cc25fc72e07c4d94694872f09be4f3e0d64a')
 
 package() {
     cd "${srcdir}/${pkgname}-"* # ${pkgver}"
