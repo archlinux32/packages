@@ -1,6 +1,6 @@
 # Maintainer: Erich Eckner <deep42thought@archlinux32.org>
 pkgname=archlinux32-keyring
-pkgver=20170515
+pkgver=20170628
 pkgrel=1
 pkgdesc='Arch Linux 32 PGP keyring'
 arch=('any')
