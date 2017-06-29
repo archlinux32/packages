@@ -1,3 +1,13 @@
 archiso
+beignet
+dolphin-emu
+embree
 gcc-multilib
+libretro-blastem
+libretro-mupen64plus
+libretro-reicast
+linux-hardened
+ponyc
+rubinius
+tensorflow
 valgrind-multilib
