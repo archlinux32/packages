@@ -3,11 +3,16 @@ beignet
 dolphin-emu
 embree
 gcc-multilib
+gitlab
 libretro-blastem
 libretro-mupen64plus
 libretro-reicast
 linux-hardened
 ponyc
+pypy3
+python-pycuda
+rkt
 rubinius
 tensorflow
 valgrind-multilib
+wiredtiger
