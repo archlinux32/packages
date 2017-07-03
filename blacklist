@@ -4,6 +4,7 @@ dolphin-emu
 embree
 gcc-multilib
 gitlab
+gitlab-gitaly
 libretro-blastem
 libretro-mupen64plus
 libretro-reicast
