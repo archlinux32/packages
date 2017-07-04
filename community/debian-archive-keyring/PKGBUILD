@@ -1,0 +1,15 @@
+depends=(
+  $(
+    printf '%s\n' "${depends[@]}" | \
+      sed '
+        /^gnupg$/s/$/='"$(
+          curl 'https://packages.debian.org/sid/gnupg' 2> /dev/null | \
+            sed -n '
+              /Package:\sgnupg/{
+                s/^.*(\([^-]\+\)-.*$/\1/
+                p
+              }
+            '
+        )/"
+  )
+)
