@@ -16,7 +16,6 @@ optdepends=('libldap: gpg2keys_ldap'
 makedepends=('libldap' 'libusb-compat')
 depends=('npth' 'libgpg-error' 'libgcrypt' 'libksba' 'libassuan'
          'pinentry' 'bzip2' 'readline' 'gnutls' 'sqlite')
-provides=("gnupg=${pkgver}")
 validpgpkeys=('D8692123C4065DEA5E0F3AB5249B39D24F25E3B6'
               '46CC730865BB5C78EBABADCF04376F3EE0856959'
               '031EC2536E580D8EA286A9F22071B08A33BD3F06'
@@ -28,9 +27,9 @@ sha1sums=('b698012cc2d77c2652afd168a15e679d1394fa89' 'SKIP'
 
 install=install
 
-conflicts=('dirmngr' 'gnupg2')
+conflicts=('dirmngr' 'gnupg2' 'gnupg')
 provides=('dirmngr' "gnupg2=${pkgver}" "gnupg=${pkgver}")
-replaces=('dirmngr' 'gnupg2')
+replaces=('dirmngr' 'gnupg2' 'gnupg')
 
 prepare() {
 	cd "${srcdir}/${pkgname%-*}-${pkgver}"
