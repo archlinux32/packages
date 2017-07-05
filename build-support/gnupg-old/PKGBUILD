@@ -21,7 +21,7 @@ validpgpkeys=('D8692123C4065DEA5E0F3AB5249B39D24F25E3B6'
               '46CC730865BB5C78EBABADCF04376F3EE0856959'
               '031EC2536E580D8EA286A9F22071B08A33BD3F06'
               'D238EA65D64C67ED4C3073F28A861B1C7EFD60D9')
-source=("https://gnupg.org/ftp/gcrypt/${pkgname}/${pkgname}-${pkgver}.tar.bz2"{,.sig}
+source=("https://gnupg.org/ftp/gcrypt/${pkgname%-*}/${pkgname%-*}-${pkgver}.tar.bz2"{,.sig}
         'scd.patch')
 sha1sums=('b698012cc2d77c2652afd168a15e679d1394fa89' 'SKIP'
           '568f48e1048f1dac721dd4055447a93485f6b2b1')
@@ -33,13 +33,13 @@ provides=('dirmngr' "gnupg2=${pkgver}")
 replaces=('dirmngr' 'gnupg2')
 
 prepare() {
-	cd "${srcdir}/${pkgname}-${pkgver}"
+	cd "${srcdir}/${pkgname%-*}-${pkgver}"
 	sed '/noinst_SCRIPTS = gpg-zip/c sbin_SCRIPTS += gpg-zip' -i tools/Makefile.in
 	patch -p1 -i ../scd.patch
 }
 
 build() {
-	cd "${srcdir}/${pkgname}-${pkgver}"
+	cd "${srcdir}/${pkgname%-*}-${pkgver}"
 	./configure \
 		--prefix=/usr \
 		--sysconfdir=/etc \
@@ -52,13 +52,13 @@ build() {
 }
 
 check() {
-	cd "${srcdir}/${pkgname}-${pkgver}"
+	cd "${srcdir}/${pkgname%-*}-${pkgver}"
 	make check || [[ $CARCH = i686 ]]
 	# https://lists.gnupg.org/pipermail/gnupg-devel/2016-December/032364.html
 }
 
 package() {
-	cd "${srcdir}/${pkgname}-${pkgver}"
+	cd "${srcdir}/${pkgname%-*}-${pkgver}"
 	make DESTDIR="${pkgdir}" install
 	ln -s gpg2 "${pkgdir}"/usr/bin/gpg
 	ln -s gpgv2 "${pkgdir}"/usr/bin/gpgv
