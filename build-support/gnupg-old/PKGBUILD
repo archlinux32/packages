@@ -29,7 +29,7 @@ sha1sums=('b698012cc2d77c2652afd168a15e679d1394fa89' 'SKIP'
 install=install
 
 conflicts=('dirmngr' 'gnupg2')
-provides=('dirmngr' "gnupg2=${pkgver}")
+provides=('dirmngr' "gnupg2=${pkgver}" "gnupg=${pkgver}")
 replaces=('dirmngr' 'gnupg2')
 
 prepare() {
