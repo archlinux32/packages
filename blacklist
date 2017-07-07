@@ -10,6 +10,7 @@ libretro-mupen64plus
 libretro-reicast
 linux-hardened
 luxrays
+mongodb
 ponyc
 pypy3
 python-pycuda
