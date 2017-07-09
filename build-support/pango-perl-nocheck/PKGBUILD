@@ -10,7 +10,7 @@ license=('LGPL')
 url="http://gtk2-perl.sourceforge.net/"
 makedepends=('perl-extutils-pkgconfig' 'perl-extutils-depends')
 depends=('pango' 'glib-perl' 'cairo-perl')
-provides=('pango-perl')
+provides=("pango-perl=${pkgver}")
 replaces=('pango-perl')
 conflicts=('pango-perl')
 options=('!emptydirs')
