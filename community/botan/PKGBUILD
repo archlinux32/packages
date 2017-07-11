@@ -1,0 +1,1 @@
+eval "$(declare -f build | sed "s|python.*;|\0\n    sed -i 's@-O2@-O3@g' Makefile;|")"
