@@ -1,0 +1,2 @@
+# remove mongodb from checkdepends - it's not available for i686 and apparently not needed either
+checkdepends=(${checkdepends[@]/mongodb})
