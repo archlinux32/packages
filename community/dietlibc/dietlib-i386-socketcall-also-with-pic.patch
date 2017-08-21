@@ -1,0 +1,19 @@
+diff --git a/i386/syscalls.h b/i386/syscalls.h
+index c4c98629..94f9be53 100644
+--- a/i386/syscalls.h
++++ b/i386/syscalls.h
+@@ -368,7 +368,6 @@ sym: \
+ .Lend##sym: ; \
+ .size sym,.Lend##sym-sym
+ 
+-#ifndef __PIC__
+ #define __socketcall(name,NAME) \
+ .text; \
+ .type name,@function; \
+@@ -381,6 +380,3 @@ __libc_##name: ; \
+ 	jmp socketcall; \
+ .Lend##name:; \
+ .size name,.Lend##name-name
+-#else
+-#define __socketcall(name,NAME)
+-#endif

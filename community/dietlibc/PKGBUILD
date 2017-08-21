@@ -1,0 +1,6 @@
+source+=("dietlib-i386-socketcall-also-with-pic.patch")
+md5sums+=('cc99f41e0ac6ef641d4a96de9161b997')
+prepare() {
+  cd "$srcdir"/$pkgname-$pkgver
+  patch -p1 -i "${srcdir}"/dietlib-i386-socketcall-also-with-pic.patch
+}
