@@ -1,0 +1,8 @@
+source+=('FS55127.patch')
+md5sums+=('8efba0d7ff90f5394edda0f83259af05')
+eval "$(
+  declare -f prepare | \
+    sed '
+      /^\s*cd\s/a  patch -p1 -i ${srcdir}/FS55127.patch
+    '
+)"
