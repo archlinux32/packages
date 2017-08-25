@@ -1,0 +1,15 @@
+# clang++ misses some C++ atomic stubs in the C++ library on 32-bit,
+# g++ compiles and links fine
+# also reported upstream: https://github.com/potassco/clingo/issues/57
+
+# cmake
+makedepends=(${makedepends[@]/clang})
+
+# must be patched after cmake has run, hence it is in build
+eval "$(
+  declare -f build | \
+    sed '
+	  s/-DCMAKE_CXX_COMPILER=clang++/-DCMAKE_CXX_COMPILER=g++/
+      /^\s*ninja\s*/i  sed -i s/clang++/g++/g ${srcdir}/build/rules.ninja
+    '
+)"
