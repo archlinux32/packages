@@ -1,6 +1,5 @@
 # see upstream: https://github.com/potassco/clingo/issues/57
 
-arch+=('i686')
 source+=("clang-libatomic.patch::https://github.com/potassco/clasp/commit/fe3e176e2813956000bb947479de2c3d80fe34be.patch")
 sha256sums+=('222b535ffd761c07c3652a3025180bcfb1f1b7504d7353048d5ce485a84c1a27')
 
