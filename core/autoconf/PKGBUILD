@@ -1,0 +1,8 @@
+if [ "${pkgname}-${pkgver}-${pkgrel}" = autoconf-2.69-4 ]; then
+  eval "$(
+    declare -f check | \
+      sed '
+        /^\s*make check$/i  export PERL_USE_UNSAFE_INC=1
+      '
+  )"
+fi
