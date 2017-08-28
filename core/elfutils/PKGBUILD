@@ -1,0 +1,10 @@
+eval "$(
+  declare -f build | \
+    sed '
+      /^\s*CFLAGS+=/{
+        a\
+    export CFLAGS=${CFLAGS/-fno-plt}\
+    export CXXFLAGS=${CXXFLAGS/-fno-plt}
+      }
+    '
+)"
