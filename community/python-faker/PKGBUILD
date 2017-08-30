@@ -1,0 +1,14 @@
+# time-tests requiring 64 bit fail on i686 - obviously
+
+source+=('remove-century-tests.patch')
+sha512sums+=('0db0780b0fbb89b4bff35fce4bc18e1f1ecafb46d55f00b4391f8f2a8f66e0244b3b988d67d922c3c206917404ee5ca6beb3f0cbd2b20c167179a2681aaf0782')
+
+eval "$(
+  declare -f prepare | \
+    sed '
+      /^{\s*$/a \
+    cd "$srcdir"/faker-$pkgver\
+    patch -p1 -i "$srcdir/remove-century-tests.patch"\
+    cd "$srcdir"
+    '
+)"
