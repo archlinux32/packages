@@ -1,7 +1,7 @@
 # time-tests requiring 64 bit fail on i686 - obviously
 
 source+=('remove-century-tests.patch')
-sha512sums+=('0db0780b0fbb89b4bff35fce4bc18e1f1ecafb46d55f00b4391f8f2a8f66e0244b3b988d67d922c3c206917404ee5ca6beb3f0cbd2b20c167179a2681aaf0782')
+sha512sums+=('29613bb221b07a92cc3a7da61a7c0cbae520a6307f208c68db8523a3318138fb11f27182e4f645ffc95bc3b55c78b46f7d252d88c1881b3a761114247856c657')
 
 eval "$(
   declare -f prepare | \

@@ -1,5 +1,5 @@
---- a/tests/providers/date_time.py	2017-08-30 14:27:30.361571816 +0200
-+++ b/tests/providers/date_time.py	2017-08-30 14:28:01.231669046 +0200
+--- a/tests/providers/test_date_time.py	2017-08-30 14:27:30.361571816 +0200
++++ b/tests/providers/test_date_time.py	2017-08-30 14:28:01.231669046 +0200
 @@ -162,9 +162,6 @@
          return int(time.mktime(value.timetuple()))
  
