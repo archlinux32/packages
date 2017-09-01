@@ -1,3 +1,4 @@
+# https://github.com/joke2k/faker/issues/408
 # time-tests requiring 64 bit fail on i686 - obviously
 
 source+=('remove-century-tests.patch')
