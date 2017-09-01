@@ -1,0 +1,7 @@
+source+=('zlib-uncompress2-conflict.patch')
+
+prepare() {
+    cd "$srcdir/$pkgname"
+    patch -p1 -i "$srcdir/zlib-uncompress2-conflict.patch"
+}
+md5sums+=('a74a6d8f16b90c1749eb03bb9c1e7bc1')
