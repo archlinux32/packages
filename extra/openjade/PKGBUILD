@@ -1,8 +1,0 @@
-eval "$(
-  declare -f prepare | \
-    sed '
-      /^{\s*$/a \
-  export CFLAGS+=" -fno-lifetime-dse" \
-  export CXXFLAGS+=" -fno-lifetime-dse"
-    '
-)"
