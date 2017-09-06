@@ -1,0 +1,8 @@
+# FS#55136
+source+=('unicode.patch')
+sha256sums+=('c2c10f00409482270df1a8ac0f681fa9da38732150a8d6e5edddef797f97bcb0')
+
+prepare() {
+  cd $pkgname
+  patch -p1 -i "$srcdir/unicode.patch"
+}
