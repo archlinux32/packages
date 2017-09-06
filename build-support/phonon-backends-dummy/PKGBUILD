@@ -1,0 +1,32 @@
+# Maintainer: Erich Eckner <arch at eckner dot net>
+
+pkgname=phonon-backend-dummys
+pkgver=0.0
+pkgrel=1
+pkgdesc='empty dummy package pretending to provide phtonon-qt[45]-backend'
+url='https://archlinux32.org/'
+license=('GPL')
+arch=('any')
+source=()
+sha512sums=()
+conflicts=(
+  'phonon-qt4-backend'
+  'phonon-qt5-backend'
+)
+provides=(
+  'phonon-qt4-backend'
+  'phonon-qt5-backend'
+)
+replaces=(
+  'phonon-qt4-backend'
+  'phonon-qt5-backend'
+)
+
+package() {
+  install -d "${pkgdir}/etc"
+  printf '%s\n' \
+    'If you see this on your (production) system, you did something wrong.' \
+    'You should install a real phonon-qt4-backend or phonon-qt5-backend package.' \
+    > \
+    "${pkgdir}/etc/THIS-SHOULD-NEVER-BE-ON-A-PRODUCTION-SYSTEM"
+}
