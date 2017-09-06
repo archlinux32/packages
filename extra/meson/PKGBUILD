@@ -1,0 +1,4 @@
+# there seems to be a bug in (this) mpi in i686
+prepare() {
+  rm -r "${pkgname}-${pkgver}/test cases/frameworks/17 mpi"
+}
