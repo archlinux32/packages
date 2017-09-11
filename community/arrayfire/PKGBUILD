@@ -1,0 +1,10 @@
+eval "$(
+  declare -f build | \
+    sed '
+      /^{/{
+        a\
+    export CFLAGS+=" -m32" \
+    export CXXFLAGS+=" -m32"
+      }
+    '
+)"
