@@ -1,0 +1,7 @@
+source+=('gpm-1.20.7-glibc-2.26-1.patch')
+sha1sums+=('af8c743dce0189abe46f53a084a060334b4d5ed8')
+
+prepare() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+  patch -p1 -i "${srcdir}/gpm-1.20.7-glibc-2.26-1.patch"
+}
