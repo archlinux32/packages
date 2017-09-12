@@ -1,0 +1,12 @@
+# This is a dirty hack to prevent differing float precisions.
+# See https://bugs.freedesktop.org/show_bug.cgi?id=102676
+
+eval "$(
+  declare -f prepare | \
+    sed '
+      /^\s*}/i\
+    sed -i '\'' \
+      s/\\(g_assert_cmpfloat\\s*\\)(\\([^,]\\+\\),\\s*==\\s*,\\([^,()]\\+\\))/\\1(fabs((\\2)-(\\3)),<=,1e-15)/ \
+    '\'' lib/colord/cd-test-private.c \
+    '
+)"
