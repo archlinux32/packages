@@ -1,0 +1,28 @@
+# Maintainer: Erich Eckner <arch at eckner dot net>
+
+pkgname=deepin-tool-kit-dummy
+pkgver=0.0
+pkgrel=1
+pkgdesc='empty dummy package pretending to provide deepin-tool-kit'
+url='https://archlinux32.org/'
+license=('GPL')
+arch=('any')
+source=()
+sha512sums=()
+conflicts=(
+  'deepin-tool-kit'
+)
+provides=(
+  'deepin-tool-kit'
+)
+replaces=(
+  'deepin-tool-kit'
+)
+
+package() {
+  install -d "${pkgdir}/etc"
+  printf '%s\n' \
+    'If you see this on your (production) system, you did something wrong.' \
+    > \
+    "${pkgdir}/etc/deepin-tool-kit.THIS-SHOULD-NEVER-BE-ON-A-PRODUCTION-SYSTEM"
+}
