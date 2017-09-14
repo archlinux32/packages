@@ -1,8 +1,0 @@
-# temporary fix for cmake - see FS#55543
-eval "$(
-  declare -f prepare | \
-    sed '
-      /^}\s*$/i \
-  git diff dfe34c8757debd07d4ef2f6f0381b2bcac1addc0{^,} | git apply
-    '
-)"
