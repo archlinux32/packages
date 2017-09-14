@@ -1,14 +1,13 @@
 # Maintainer: Erich Eckner <deep42thought@archlinux32.org>
-pkgname=archlinux32-keyring
+pkgname=archlinux32-keyring-transition
 pkgver=20170628
-pkgrel=2
-pkgdesc='Arch Linux 32 PGP keyring'
+pkgrel=1
+pkgdesc='Arch Linux 32 PGP keyring - transition package'
 arch=('any')
 url='http://archlinux32.org'
 license=('GPL')
 install="${pkgname}.install"
-conflicts=('archlinux32-keyring-transition')
-replaces=('archlinux32-keyring-transition')
+provides=('archlinux32-keyring')
 source=("https://github.com/archlinux32/$pkgname/archive/v$pkgver.tar.gz")
 sha512sums=('3c088e02bda95dfa4e72a3afd6e934f8920fb5befaea1080d40cc5594ff77c8bff0f994028b7d371411c35cf4959cc25fc72e07c4d94694872f09be4f3e0d64a')
 
