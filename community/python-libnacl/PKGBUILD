@@ -1,0 +1,9 @@
+# see https://bbs.archlinux32.org/viewtopic.php?pid=224
+# and https://github.com/saltstack/libnacl/issues/103
+
+prepare() {
+  sed -i '
+    s/m, mlen,/m, ctypes.byref(mlen),/
+  ' "libnacl-${pkgver}/libnacl/__init__.py"
+  cp -r libnacl-$pkgver{,-py2}
+}
