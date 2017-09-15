@@ -5,5 +5,6 @@ if [ "${pkgver}" != '4.4.3' ]; then
 fi
 
 pkgver=4.5.1
+source[0]="${source[0]/4.4.3/4.5.1}"
 source+=('precision.patch')
 md5sums+=('66b867cfe895c1006f9119a1ae1f3f63')
