@@ -1,0 +1,12 @@
+# see https://github.com/andymccurdy/redis-py/issues/899
+
+source+=('precision.patch')
+sha512sums+=('ccefada444c145f78098a37880bf7b1c7a2f2e24e92efc62f084610064c4391e4e0792a3e380ca940b73b15d703d5d0f166a8f7d8d17b9d84772b3e870fb74d5')
+
+eval "$(
+  declare -f prepare | \
+    sed '
+      /^{/ a \
+        patch -p0 -i precision.patch
+    '
+)"

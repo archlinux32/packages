@@ -1,0 +1,95 @@
+--- redis-2.10.6/tests/test_commands.py	2017-09-15 15:05:58.441320136 +0200
++++ redis-2.10.6/tests/test_commands.py	2017-09-15 15:05:57.429413306 +0200
+@@ -1457,9 +1457,11 @@
+ 
+         r.geoadd('barcelona', *values)
+         # redis uses 52 bits precision, hereby small errors may be introduced.
+-        assert r.geopos('barcelona', 'place1', 'place2') ==\
+-            [(2.19093829393386841, 41.43379028184083523),
+-             (2.18737632036209106, 41.40634178640635099)]
++        res = r.geopos('barcelona', 'place1', 'place2')
++        assert abs(res[0][0] - 2.19093829393386841) < 0.0001
++        assert abs(res[0][1] - 41.43379028184083523) < 0.0001
++        assert abs(res[1][0] - 2.18737632036209106) < 0.0001
++        assert abs(res[1][1] - 41.40634178640635099) < 0.0001
+ 
+     @skip_if_server_version_lt('4.0.0')
+     def test_geopos_no_value(self, r):
+@@ -1504,20 +1506,27 @@
+ 
+         # test a bunch of combinations to test the parse response
+         # function.
+-        assert r.georadius('barcelona', 2.191, 41.433, 1, unit='km',
+-                           withdist=True, withcoord=True, withhash=True) ==\
+-            [['place1', 0.0881, 3471609698139488,
+-              (2.19093829393386841, 41.43379028184083523)]]
+-
+-        assert r.georadius('barcelona', 2.191, 41.433, 1, unit='km',
+-                           withdist=True, withcoord=True) ==\
+-            [['place1', 0.0881,
+-              (2.19093829393386841, 41.43379028184083523)]]
+-
+-        assert r.georadius('barcelona', 2.191, 41.433, 1, unit='km',
+-                           withhash=True, withcoord=True) ==\
+-            [['place1', 3471609698139488,
+-              (2.19093829393386841, 41.43379028184083523)]]
++        res = r.georadius('barcelona', 2.191, 41.433, 1, unit='km',
++                           withdist=True, withcoord=True, withhash=True)[0]
++        assert res[0] == 'place1'
++        assert abs(res[1] - 0.0881) < 0.00001
++        assert res[2] == 3471609698139488
++        assert abs(res[3][0] - 2.19093829393386841) < 0.000000001
++        assert abs(res[3][1] - 41.43379028184083523) < 0.000000001
++
++        res = r.georadius('barcelona', 2.191, 41.433, 1, unit='km',
++                           withdist=True, withcoord=True)[0]
++        assert res[0] == 'place1'
++        assert abs(res[1] - 0.0881) < 0.0001
++        assert abs(res[2][0] - 2.19093829393386841) < 0.0000001
++        assert abs(res[2][1] - 41.43379028184083523) < 0.0000001
++
++        res = r.georadius('barcelona', 2.191, 41.433, 1, unit='km',
++                           withhash=True, withcoord=True)[0]
++        assert res[0] == 'place1'
++        assert res[1] == 3471609698139488
++        assert abs(res[2][0] - 2.19093829393386841) < 0.0000001
++        assert abs(res[2][1] - 41.43379028184083523) < 0.0000001
+ 
+         # test no values.
+         assert r.georadius('barcelona', 2, 1, 1, unit='km',
+@@ -1561,7 +1570,7 @@
+         r.georadius('barcelona', 2.191, 41.433, 1000,
+                     store_dist='places_barcelona')
+         # instead of save the geo score, the distance is saved.
+-        assert r.zscore('places_barcelona', 'place1') == 88.05060698409301
++        assert abs(r.zscore('places_barcelona', 'place1') - 88.05060698409301) < 0.00000001
+ 
+     @skip_if_server_version_lt('3.2.0')
+     def test_georadiusmember(self, r):
+@@ -1573,13 +1582,20 @@
+             ['place2', 'place1']
+         assert r.georadiusbymember('barcelona', 'place1', 10) == ['place1']
+ 
+-        assert r.georadiusbymember('barcelona', 'place1', 4000,
++        res = r.georadiusbymember('barcelona', 'place1', 4000,
+                                    withdist=True, withcoord=True,
+-                                   withhash=True) ==\
+-            [['place2', 3067.4157, 3471609625421029,
+-                (2.187376320362091, 41.40634178640635)],
+-             ['place1', 0.0, 3471609698139488,
+-                 (2.1909382939338684, 41.433790281840835)]]
++                                   withhash=True)
++        r1 = [r for r in res if r[0] == 'place1'][0]
++        r2 = [r for r in res if r[0] == 'place2'][0]
++        
++        assert abs(r1[1]) < 0.0001
++        assert r1[2] == 3471609698139488
++        assert abs(r1[3][0] - 2.1909382939338684) < 0.0000001
++        assert abs(r1[3][1] - 41.433790281840835) < 0.0000001
++        assert abs(r2[1] - 3067.4157) < 0.0001
++        assert r2[2] == 3471609625421029
++        assert abs(r2[3][0] - 2.187376320362091) < 0.0000001
++        assert abs(r2[3][1] - 41.40634178640635) < 0.0000001
+ 
+ 
+ class TestStrictCommands(object):
