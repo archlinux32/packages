@@ -1,0 +1,9 @@
+# first, we need to bump the version a little
+if [ "${pkgver}" != '4.4.3' ]; then
+  echo 'Sry, patch is probably outdated.'
+  exit 1
+fi
+
+pkgver=4.5.1
+source+=('precision.patch')
+md5sums+=('66b867cfe895c1006f9119a1ae1f3f63')
