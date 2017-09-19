@@ -16,6 +16,7 @@ opera
 ponyc
 pypy3
 python-pycuda
+python-pytorch
 rkt
 rubinius
 tensorflow
