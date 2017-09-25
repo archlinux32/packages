@@ -1,8 +1,8 @@
 # https://github.com/joke2k/faker/issues/408
-# time-tests requiring 64 bit fail on i686 - obviously
+# time-tests requiring 64 bit fail on i686 - obviously (year 2100 is not representable with 32 bits)
 
 source+=('remove-century-tests.patch')
-sha512sums+=('29613bb221b07a92cc3a7da61a7c0cbae520a6307f208c68db8523a3318138fb11f27182e4f645ffc95bc3b55c78b46f7d252d88c1881b3a761114247856c657')
+sha512sums+=('69d6c7685f49d28bc5a4ea952d6f0f6ab03e7c9956e338fc7e26d6a714de569641b82e95bb30de15b4598b6fbf3fb8e0a497fde2e28bd988fafbeb030bb24f91')
 
 eval "$(
   declare -f prepare | \
