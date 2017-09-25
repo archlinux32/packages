@@ -1,0 +1,2 @@
+source+=('precision.patch')
+md5sums+=('66b867cfe895c1006f9119a1ae1f3f63')
