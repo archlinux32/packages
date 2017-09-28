@@ -1,6 +1,7 @@
 archiso
 bazel
 beignet
+dmd
 dolphin-emu
 embree
 gcc-multilib
@@ -17,9 +18,11 @@ ponyc
 pypy3
 python-pycuda
 python-pytorch
+python-sympy
 rkt
 rubinius
 tensorflow
+twisted
 valgrind-multilib
 wiredtiger
 zcash
