@@ -22,7 +22,6 @@ python-sympy
 rkt
 rubinius
 tensorflow
-twisted
 valgrind-multilib
 wiredtiger
 zcash
