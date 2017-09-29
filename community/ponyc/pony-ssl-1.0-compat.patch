@@ -1,0 +1,35 @@
+diff --git a/packages/crypto/digest.pony b/packages/crypto/digest.pony
+index 9b88fb45..7afeb847 100644
+--- a/packages/crypto/digest.pony
++++ b/packages/crypto/digest.pony
+@@ -1,5 +1,5 @@
+ use "path:/usr/local/opt/libressl/lib" if osx
+-use "lib:crypto"
++use "lib:/usr/lib/libcrypto.so.1.0.0"
+ 
+ primitive _EVPMD
+ primitive _EVPCTX
+diff --git a/packages/crypto/hash_fn.pony b/packages/crypto/hash_fn.pony
+index b3edc5cf..2d48f99c 100644
+--- a/packages/crypto/hash_fn.pony
++++ b/packages/crypto/hash_fn.pony
+@@ -1,5 +1,5 @@
+ use "path:/usr/local/opt/libressl/lib" if osx
+-use "lib:crypto"
++use "lib:/usr/lib/libcrypto.so.1.0.0"
+ 
+ use "format"
+ 
+diff --git a/packages/net/ssl/_ssl_init.pony b/packages/net/ssl/_ssl_init.pony
+index 26a48d26..e861a086 100644
+--- a/packages/net/ssl/_ssl_init.pony
++++ b/packages/net/ssl/_ssl_init.pony
+@@ -1,6 +1,6 @@
+ use "path:/usr/local/opt/libressl/lib" if osx
+-use "lib:ssl"
+-use "lib:crypto"
++use "lib:/usr/lib/libssl.so.1.0.0"
++use "lib:/usr/lib/libcrypto.so.1.0.0"
+ 
+ primitive _SSLInit
+   """

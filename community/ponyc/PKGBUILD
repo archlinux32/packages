@@ -1,6 +1,18 @@
 # It seems, compiling for i686 is as simple as specifying you want i686.
 
+depends+=('openssl-1.0')
+source+=('pony-ssl-1.0-compat.patch')
+sha512sums+=('3256eba9398cc0f0a933d7e54321476d2847a95ca627571cc0911e758d3b29cf4c91d6dbe2a7c1905a8d8c0b1cb7472c5139c7df2bb6e0530c9c15d49f06ade4')
+
 eval "$(
   declare -f build check | \
-    sed 's|x86-64|i686|'
+    sed '
+      s|x86-64|i686|
+      s|make |make default_pic=true|
+    '
+  declare -f prepare | \
+    sed '
+      /}/ i
+        patch -Np1 -i "$srcdir/pony-ssl-1.0-compat.patch"
+    '
 )"
