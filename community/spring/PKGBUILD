@@ -1,0 +1,10 @@
+# see upstream: https://springrts.com/mantis/view.php?id=5413
+
+md5sums[1]="59d186079e08ae9260fd31bf7129e7e7"
+
+prepare() {
+  cd spring_$pkgver
+
+  # https://springrts.com/mantis/view.php?id=5413
+  patch -Np1 -i ../gold-linker.patch
+}
