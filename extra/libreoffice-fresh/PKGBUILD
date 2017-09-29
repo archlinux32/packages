@@ -1,0 +1,3 @@
+# see https://bugs.archlinux.org/task/55764
+
+makedepends=("${makedepends[@]/java-environment/java-environment=8}")
