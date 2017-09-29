@@ -1,0 +1,8 @@
+# see upstream: https://springrts.com/mantis/view.php?id=5413
+
+prepare() {
+  cd spring_$pkgver
+
+  # https://springrts.com/mantis/view.php?id=5413
+  patch -Np1 -i ../gold-linker.patch
+}
