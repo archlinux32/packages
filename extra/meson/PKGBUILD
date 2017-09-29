@@ -1,4 +1,1 @@
-# there seems to be a bug in (this) mpi in i686
-prepare() {
-  rm -r "${pkgname}-${pkgver}/test cases/frameworks/17 mpi"
-}
+checkdepends=("${checkdepends[@]/java-environment>=8/java-environment=8}")
