@@ -11,6 +11,7 @@
 
 ## Germany
 # Server = https://mirror.archlinux32.org/$arch/$repo
+# note: you need to resolve via openNIC (or similar) to access the next mirror
 # Server = http://mirror.archlinux32.oss/$arch/$repo
 
 ## United States
