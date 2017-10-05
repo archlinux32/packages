@@ -1,0 +1,1 @@
+checkdepends=("${checkdepends[@]/java-environment>=8/java-environment=8}")
