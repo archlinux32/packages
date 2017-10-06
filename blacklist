@@ -18,5 +18,5 @@ python-pytorch # Gloo can only be built on 64-bit systems
 # rubinius
 # tensorflow
 valgrind-multilib # obviously not needed on i686
-# wiredtiger
+wiredtiger # WiredTiger requires a 64-bit build
 # zcash
