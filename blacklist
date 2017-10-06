@@ -6,7 +6,7 @@ archiso # the official package does not build an iso on i686
 gcc-multilib # obviously not needed on i686
 # gitlab
 # libretro-blastem
-linux-hardened # not really useful on i686 + hard to maintain
+linux-hardened # not <a href="https://mirror.archlinux32.org/irc-logs/%23archlinux-ports/2017-06-28.html#04:04:01">really useful</a> on i686 + hard to maintain
 luxrays # does not compile on i686 - see FS#54960
 # mongodb
 # opera
@@ -15,7 +15,7 @@ luxrays # does not compile on i686 - see FS#54960
 python-pytorch # Gloo can only be built on 64-bit systems
 # python-sympy
 # rkt
-# rubinius
+rubinius # Support for non-64bit platforms was deprecated 1 Jun 2016 and has now been removed. If non-64bit support is a critical feature for your application, please email contact@rubinius.com
 # tensorflow
 valgrind-multilib # obviously not needed on i686
 wiredtiger # WiredTiger requires a 64-bit build
