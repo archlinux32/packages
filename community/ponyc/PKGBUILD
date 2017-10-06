@@ -12,7 +12,7 @@ eval "$(
     '
   declare -f prepare | \
     sed '
-      /}/ i
+      /}/ i \
         patch -Np1 -i "$srcdir/pony-ssl-1.0-compat.patch"
     '
 )"
