@@ -1,26 +1,26 @@
-archiso
-bazel
-beignet
-dmd
-dolphin-emu
-embree
-gcc-multilib
-gitlab
-gitlab-gitaly
-libretro-blastem
-libretro-mupen64plus
-libretro-reicast
-linux-hardened
-luxrays
-mongodb
-opera
-pypy3
-python-pycuda
-python-pytorch
-python-sympy
-rkt
-rubinius
-tensorflow
-valgrind-multilib
-wiredtiger
-zcash
+archiso # the official package does not build an iso on i686
+# bazel
+# beignet
+# dmd
+# dolphin-emu
+# embree # has never been an i686 package for arch, but might built for i686, actually
+gcc-multilib # obviously not needed on i686
+# gitlab
+# gitlab-gitaly
+# libretro-blastem
+# libretro-mupen64plus
+# libretro-reicast
+linux-hardened # not really useful on i686 + hard to maintain
+luxrays # does not compile on i686 - see FS#54960
+# mongodb
+# opera
+# pypy3
+# python-pycuda
+# python-pytorch
+# python-sympy
+# rkt
+# rubinius
+# tensorflow
+valgrind-multilib # oviously not needed on i686
+# wiredtiger
+# zcash
