@@ -8,7 +8,6 @@ gcc-multilib # obviously not needed on i686
 # libretro-blastem
 linux-hardened # not <a href="https://mirror.archlinux32.org/irc-logs/%23archlinux-ports/2017-06-28.html#04:04:01">really useful</a> on i686 + hard to maintain
 luxrays # does not compile on i686 - see FS#54960
-# opera
 # python-pycuda
 python-pytorch # Gloo can only be built on 64-bit systems
 # python-sympy
