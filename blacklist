@@ -10,7 +10,6 @@ linux-hardened # not <a href="https://mirror.archlinux32.org/irc-logs/%23archlin
 luxrays # does not compile on i686 - see FS#54960
 # mongodb
 # opera
-# pypy3
 # python-pycuda
 python-pytorch # Gloo can only be built on 64-bit systems
 # python-sympy
