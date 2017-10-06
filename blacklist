@@ -21,6 +21,6 @@ luxrays # does not compile on i686 - see FS#54960
 # rkt
 # rubinius
 # tensorflow
-valgrind-multilib # oviously not needed on i686
+valgrind-multilib # obviously not needed on i686
 # wiredtiger
 # zcash
