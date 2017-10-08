@@ -1,0 +1,6 @@
+eval "$(
+  declare -f build | \
+    sed '
+      s|cmake ..|cmake .. -DENABLE_GENERIC='TRUE'|
+    '
+)"
