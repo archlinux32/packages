@@ -1,5 +1,4 @@
 archiso # the official package does not build an iso on i686
-# bazel
 # dmd
 # dolphin-emu
 # embree # has never been an i686 package for arch, but might built for i686, actually

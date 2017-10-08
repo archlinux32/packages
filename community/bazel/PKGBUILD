@@ -1,1 +1,6 @@
 depends=("${depends[@]/java-environment>=8/java-environment=8}")
+
+prepare() {
+    sed -i 's|#error This code for 64 bit Unix|//#error This code for 64 bit Unix|g' \
+		${srcdir}/src/tools/singlejar/mapped_file.h
+}
