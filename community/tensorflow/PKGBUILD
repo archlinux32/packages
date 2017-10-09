@@ -1,0 +1,6 @@
+eval "$(
+  declare -f prepare | \
+    sed '
+      s|export CC_OPT_FLAGS="-march=x86-64"|export CC_OPT_FLAGS="-march=i686"|
+    '
+)"
