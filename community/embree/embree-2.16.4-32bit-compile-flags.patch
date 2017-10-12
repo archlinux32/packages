@@ -1,0 +1,35 @@
+diff -rauN embree-2.16.4/common/algorithms/CMakeLists.txt embree-2.16.4-32bit-compile-flags/common/algorithms/CMakeLists.txt
+--- embree-2.16.4/common/algorithms/CMakeLists.txt	2017-06-28 15:11:17.000000000 +0200
++++ embree-2.16.4-32bit-compile-flags/common/algorithms/CMakeLists.txt	2017-10-12 19:37:01.900000000 +0200
+@@ -28,5 +28,6 @@
+ )
+ 
+ SET_PROPERTY(TARGET algorithms PROPERTY FOLDER common)
++SET_TARGET_PROPERTIES(algorithms PROPERTIES COMPILE_FLAGS "${FLAGS_LOWEST}")
+ 
+  
+diff -rauN embree-2.16.4/common/simd/CMakeLists.txt embree-2.16.4-32bit-compile-flags/common/simd/CMakeLists.txt
+--- embree-2.16.4/common/simd/CMakeLists.txt	2017-06-28 15:11:17.000000000 +0200
++++ embree-2.16.4-32bit-compile-flags/common/simd/CMakeLists.txt	2017-10-12 19:37:11.450000002 +0200
+@@ -16,4 +16,5 @@
+ 
+ ADD_LIBRARY(simd STATIC sse.cpp)
+ SET_PROPERTY(TARGET simd PROPERTY FOLDER common)
++SET_TARGET_PROPERTIES(simd PROPERTIES COMPILE_FLAGS "${FLAGS_LOWEST}")
+ 
+diff -rauN embree-2.16.4/common/sys/CMakeLists.txt embree-2.16.4-32bit-compile-flags/common/sys/CMakeLists.txt
+--- embree-2.16.4/common/sys/CMakeLists.txt	2017-06-28 15:11:17.000000000 +0200
++++ embree-2.16.4-32bit-compile-flags/common/sys/CMakeLists.txt	2017-10-12 19:37:23.356666640 +0200
+@@ -33,3 +33,4 @@
+ 
+ TARGET_LINK_LIBRARIES(sys ${CMAKE_THREAD_LIBS_INIT} ${CMAKE_DL_LIBS})
+ SET_PROPERTY(TARGET sys PROPERTY FOLDER common)
++SET_TARGET_PROPERTIES(sys PROPERTIES COMPILE_FLAGS "${FLAGS_LOWEST}")
+diff -rauN embree-2.16.4/common/tasking/CMakeLists.txt embree-2.16.4-32bit-compile-flags/common/tasking/CMakeLists.txt
+--- embree-2.16.4/common/tasking/CMakeLists.txt	2017-06-28 15:11:17.000000000 +0200
++++ embree-2.16.4-32bit-compile-flags/common/tasking/CMakeLists.txt	2017-10-12 19:38:17.819999991 +0200
+@@ -29,3 +29,4 @@
+ ENDIF()
+ 
+ SET_PROPERTY(TARGET tasking PROPERTY FOLDER common)
++SET_TARGET_PROPERTIES(tasking PROPERTIES COMPILE_FLAGS "${FLAGS_LOWEST}")

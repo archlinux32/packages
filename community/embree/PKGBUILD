@@ -1,0 +1,7 @@
+source+=('embree-2.16.4-32bit-compile-flags.patch')
+md5sums+=('153744f2310f060ed5e0627e2593f40b')
+
+prepare() {
+	cd "$srcdir/$pkgname-$pkgver"
+	patch -p1 -i $srcdir/embree-2.16.4-32bit-compile-flags.patch
+}
