@@ -1,4 +1,0 @@
-# see FS#55763
-
-depends=("${depends[@]/>=8/=8}")
-makedepends=("${makedepends[@]/>=8/=8}")
