@@ -1,0 +1,2 @@
+# does not build with java 9
+depends=("${depends[@]/>=8/=8}")
