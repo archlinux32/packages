@@ -1,0 +1,10 @@
+source+=('appstream-glib-0.7.2-aptest.patch')
+sha256sums+=('de5ca5f21e19f9d6ecb361c39c850cbfee9307049a82436ff0f14f360f525307')
+
+eval "$(
+  declare -f prepare | \
+    sed '
+      /}/ i \
+        patch -Np1 -i "$srcdir/appstream-glib-0.7.2-aptest.patch"
+    '
+)"
