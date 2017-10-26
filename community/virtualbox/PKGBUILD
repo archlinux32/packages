@@ -1,0 +1,8 @@
+# Parallel builds lead to "virtual memory exhausted"?
+
+eval "$(
+  declare -f build | \
+    sed '
+      s|kmk|kmk -j 1|
+    '
+)"
