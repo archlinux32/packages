@@ -1,0 +1,12 @@
+# Patch: https://bugsfiles.kde.org/attachment.cgi?id=107639
+# See: https://bugs.kde.org/show_bug.cgi?id=386115
+# and https://bugs.kde.org/show_bug.cgi?id=384230
+
+source+=('valgrind-3.13.0-ignore-redundant-addr16-prefix-in-rel-call.patch')
+md5sums+=('3df4e4b3724de72cc68b13c1aabdfd2e')
+sha512sums+=('fedf7b68e2246819a37c3d6126384e13103c4e22a68b4339ed41c7a1528a09f15fc32ea3cab7e4f87d7514b855582f68bfb8b864aaa0821759a3a6b12b5ad9e4')
+
+prepare() {
+  cd $pkgname-$pkgver
+  patch -Np1 -i "$srcdir/valgrind-3.13.0-ignore-redundant-addr16-prefix-in-rel-call.patch"
+}

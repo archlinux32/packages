@@ -1,0 +1,24 @@
+commit 0a01a3771224300c0549e3cf26529a5995011092
+Author: Tom Hughes <tom@compton.nu>
+Date:   Thu Aug 31 15:58:11 2017 +0100
+
+    Ignore redundant addr16 prefix on relative call
+    
+    BZ#384230
+
+diff --git a/VEX/priv/guest_x86_toIR.c b/VEX/priv/guest_x86_toIR.c
+index 9f6a41abf..ad1f8d838 100644
+--- a/VEX/priv/guest_x86_toIR.c
++++ b/VEX/priv/guest_x86_toIR.c
+@@ -13067,6 +13067,11 @@ DisResult disInstr_X86_WRK (
+        goto decode_success;
+    }
+ 
++   /* 67 E8 = CALL with redundant addr16 prefix */
++   if (insn[0] == 0x67 && insn[1] == 0xE8) {
++      delta++;
++   }
++
+    /* ---------------------------------------------------- */
+    /* --- start of the baseline insn decoder            -- */
+    /* ---------------------------------------------------- */
