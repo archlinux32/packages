@@ -1,0 +1,4 @@
+# remove cross-compiling dependencies (see FS#55268)
+
+depends=("${depends[@]/lib32-glibc/}")
+makedepends=("${makedepends[@]/gcc-multilib/}")
