@@ -1,0 +1,20 @@
+# remove cross-compiling-prefixes
+
+eval "$(
+  sed '
+    s/lib32-//g
+    /^# remove cross-compiling-prefixes$/q
+  ' "${BASH_SOURCE[0]}"
+)"
+
+# and gcc-multilib
+
+makedepends=($(
+  printf '%s\n' "${makedepends[@]}" | \
+    sed '/^gcc-multilib/d'
+))
+
+# and these guys, too
+unset replaces
+unset conflicts
+unset provides
