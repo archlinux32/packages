@@ -1,0 +1,2 @@
+depends=("${depends[@]/java-runtime>=8/java-runtime=8}")
+makedepends=("${makedepends[@]/java-environment>=8/java-environment=8}")
