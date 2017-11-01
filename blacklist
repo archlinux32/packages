@@ -6,7 +6,6 @@ linux-hardened # not <a href="https://mirror.archlinux32.org/irc-logs/%23archlin
 luxrays # does not compile on i686 - see FS#54960
 python-pytorch # Gloo can only be built on 64-bit systems
 # python-sympy
-# rkt
 rubinius # Support for non-64bit platforms was deprecated 1 Jun 2016 and has now been removed. If non-64bit support is a critical feature for your application, please email contact@rubinius.com
 wiredtiger # WiredTiger requires a 64-bit build
 zcash # <a href="https://github.com/zcash/zcash/issues/914">We don't yet support 32bit systems (and we won't by launch) but we can look into this after launch.</a>
