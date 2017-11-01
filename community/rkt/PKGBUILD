@@ -1,0 +1,8 @@
+# this is, what debian does (https://packages.debian.org/de/sid/i386/rkt)
+
+eval "$(
+  declare -f build | \
+    sed '
+      s|coreos,kvm,host,fly|host|
+    '
+)"
