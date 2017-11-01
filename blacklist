@@ -9,4 +9,4 @@ python-pytorch # Gloo can only be built on 64-bit systems
 # rkt
 rubinius # Support for non-64bit platforms was deprecated 1 Jun 2016 and has now been removed. If non-64bit support is a critical feature for your application, please email contact@rubinius.com
 wiredtiger # WiredTiger requires a 64-bit build
-# zcash
+zcash # <a href="https://github.com/zcash/zcash/issues/914">We don't yet support 32bit systems (and we won't by launch) but we can look into this after launch.</a>
