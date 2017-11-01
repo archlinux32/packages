@@ -1,0 +1,10 @@
+# temporarily use posix-spawn 0.3.12 (there is a bug in 0.3.13)
+# remove, when https://github.com/rtomayko/posix-spawn/pull/83 resolved
+
+eval "$(
+  declare -f build | \
+    sed '
+      /bundle-2\.3 config/ a \
+        sed -i "/posix-spawn/s/0\\.3\\.13/0.3.12/" Gemfile.lock
+    '
+)"
