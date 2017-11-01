@@ -1,6 +1,0 @@
-eval "$(
-  declare -f build | \
-    sed '
-      s|-unknown-linux-gnu|-pc-linux-gnu|g
-    '
-)"
