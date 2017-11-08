@@ -1,0 +1,13 @@
+# This is a desperate measure to work around non-building demo EFI apps
+# See https://sourceforge.net/p/gnu-efi/support-requests/6/
+
+eval "$(
+  declare -f build | \
+    sed '
+      s|make lib gnuefi inc apps|make lib gnuefi inc|
+    '
+  declare -f package | \
+    sed '
+      s|^[ \t]*install|#install|g
+    '
+)"
