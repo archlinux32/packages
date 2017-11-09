@@ -1,0 +1,2 @@
+# mongodb is not available for i686
+checkdepends=("${checkdepends[@]/mongodb/}")
