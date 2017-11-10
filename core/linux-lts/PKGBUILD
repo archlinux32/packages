@@ -1,0 +1,16 @@
+source+=('config-i686')
+sha256sums+=('f5611ebd9d9ff0aad420cb74857cd6b034ebc1d3fea480bca8a43610780907d5')
+
+eval "$(
+  declare -f prepare | \
+    sed '
+      s|cat "${srcdir}/config" > ./.config|cat "${srcdir}/config-i686" > ./.config|
+    '
+  declare -f _package-headers | \
+    sed '
+      /^\s*cp arch\/${KARCH}\/Makefile.*$/ {
+        a \
+          cp arch/${KARCH}/Makefile_32.cpu "${pkgdir}/usr/lib/modules/${_kernver}/build/arch/${KARCH}/"
+      }
+    '
+)"
