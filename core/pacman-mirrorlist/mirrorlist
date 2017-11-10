@@ -10,6 +10,9 @@
 #Server = https://archlinux32.mirror.roelf.org/$arch/$repo
 
 ## Germany
+#Server = http://archlinux32.vollzornbrot.de/$arch/$repo
+#Server = https://archlinux32.vollzornbrot.de/$arch/$repo
+#Server = http://mirror.archlinux32.org/$arch/$repo
 #Server = https://mirror.archlinux32.org/$arch/$repo
 # note: you need to resolve via openNIC (or similar) to access the next mirror
 #Server = http://mirror.archlinux32.oss/$arch/$repo
