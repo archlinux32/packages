@@ -1,0 +1,10 @@
+# see upstream git
+# https://cgit.freedesktop.org/xorg/app/intel-gpu-tools/patch/?id=4fbb4b9c12d1944e5d60bc4f3d0cbd0bf7bed36d
+
+source+=('4fbb4b9c12d1944e5d60bc4f3d0cbd0bf7bed36d.patch')
+md5sums+=('95b06382361f96e43db9547a256a51d2')
+
+prepare( ) {
+  cd $pkgname-$pkgver
+  patch -Np1 -i "$srcdir/4fbb4b9c12d1944e5d60bc4f3d0cbd0bf7bed36d.patch"
+}
