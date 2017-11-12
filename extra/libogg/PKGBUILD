@@ -1,0 +1,6 @@
+eval "$(
+  declare -f package | \
+    sed '
+      s|config_types{,-64}.h|config_types{,-32}.h|
+    '
+)"
