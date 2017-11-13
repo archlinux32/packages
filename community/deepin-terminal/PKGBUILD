@@ -1,0 +1,9 @@
+# make a source tar ball from the "source" tar ball
+# see https://bugs.archlinux32.org/index.php?do=details&task_id=10
+
+eval "$(
+  declare -f prepare | \
+    sed '
+      2 a find $pkgname-$pkgver \\( '"-name '*.a' -o -name '*.o'"' \\) -delete
+    '
+)"
