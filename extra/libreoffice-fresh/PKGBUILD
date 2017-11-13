@@ -1,3 +1,10 @@
 # see https://bugs.archlinux.org/task/55764
 
 makedepends=("${makedepends[@]/java-environment/java-environment=8}")
+
+eval "$(
+  declare -f build | \
+    sed '
+      s|make build|make build-nocheck|
+    '
+)"
