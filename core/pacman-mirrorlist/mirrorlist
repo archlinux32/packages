@@ -17,5 +17,17 @@
 # note: you need to resolve via openNIC (or similar) to access the next mirror
 #Server = http://mirror.archlinux32.oss/$arch/$repo
 
+## India
+#Server = https://ind.mirror.archlinux32.org/$arch/$repo
+
+## Japan
+#Server = https://jpn.mirror.archlinux32.org/$arch/$repo
+
+## Mexico
+#Server = https://mex.mirror.archlinux32.org/$arch/$repo
+
+## Singapore
+#Server = https://sgp.mirror.archlinux32.org/$arch/$repo
+
 ## United States
 #Server = https://32.arlm.tyzoid.com/$arch/$repo
