@@ -1,0 +1,8 @@
+eval "$(
+  declare -f build | \
+    sed '
+      /^\s*make / i CFLAGS+=" -march=pentium4" \
+                    CXXFLAGS+=" -march=pentium4"
+      /MARCH="/ s/"x86-64"/"pentium4"/
+    '
+)"
