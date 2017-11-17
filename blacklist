@@ -3,10 +3,10 @@ cuda # cuda 9.0 is 64-bit only
 dmd # fails to build, <a href="https://issues.dlang.org/show_bug.cgi?id=17833">upstream</a> is unresponsive, see <a href="https://bbs.archlinux32.org/viewtopic.php?pid=492#p492">forum</a>
 linux-hardened # not <a href="https://mirror.archlinux32.org/irc-logs/%23archlinux-ports/2017-06-28.html#04:04:01">really useful</a> on i686 + hard to maintain
 luxrays # does not compile on i686 - see FS#54960
+nsjail # kafel has no 32-bit Intel support, see also <a href="https://bbs.archlinux32.org/viewtopic.php?pid=795#p795">forum</a>
 python-pytorch # Gloo can only be built on 64-bit systems
 rubinius # Support for non-64bit platforms was deprecated 1 Jun 2016 and has now been removed. If non-64bit support is a critical feature for your application, please email contact@rubinius.com
+skia-sharp # does not provide a bin/gn for 32-bit Linux, see FS32#8
+skia-sharp58 # does not provide a bin/gn for 32-bit Linux, see FS32#8
 wiredtiger # WiredTiger requires a 64-bit build
 zcash # <a href="https://github.com/zcash/zcash/issues/914">We don't yet support 32bit systems (and we won't by launch) but we can look into this after launch.</a>
-skia-sharp58 # does not provide a bin/gn for 32-bit Linux, see FS32#8
-skia-sharp # does not provide a bin/gn for 32-bit Linux, see FS32#8
-nsjail # kafel has no 32-bit Intel support, see also <a href="https://bbs.archlinux32.org/viewtopic.php?pid=795#p795">forum</a>
