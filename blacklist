@@ -9,4 +9,4 @@ wiredtiger # WiredTiger requires a 64-bit build
 zcash # <a href="https://github.com/zcash/zcash/issues/914">We don't yet support 32bit systems (and we won't by launch) but we can look into this after launch.</a>
 skia-sharp58 # does not provide a bin/gn for 32-bit Linux, see FS32#8
 skia-sharp # does not provide a bin/gn for 32-bit Linux, see FS32#8
-nsjail # kafel has no 32-bit Intel support
+nsjail # kafel has no 32-bit Intel support, see also <a href="https://bbs.archlinux32.org/viewtopic.php?pid=795#p795">forum</a>
