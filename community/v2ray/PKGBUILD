@@ -1,0 +1,6 @@
+eval "$(
+  declare -f package | \
+    sed '
+      s@/v2ray-custom-linux-64/@/v2ray-custom-linux-32/@
+    '
+)"
