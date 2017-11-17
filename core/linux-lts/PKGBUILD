@@ -6,7 +6,7 @@ eval "$(
     sed '
       s|cat "${srcdir}/config" > ./.config|cat "${srcdir}/config-i686" > ./.config|
     '
-  declare -f _package-headers | \
+  declare -f package_linux-lts-headers | \
     sed '
       /^\s*cp arch\/${KARCH}\/Makefile.*$/ {
         a \
