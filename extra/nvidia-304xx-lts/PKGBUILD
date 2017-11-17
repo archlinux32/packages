@@ -1,0 +1,3 @@
+_arch='x86'
+_pkg="${_pkg%-no-compat32}"
+_pkg="${_pkg/x86_64/x86}"
