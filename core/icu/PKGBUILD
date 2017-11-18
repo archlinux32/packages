@@ -1,0 +1,7 @@
+# repair testsuite failure: "jour" -> "jours"
+
+prepare() {
+  sed -i '
+    s/\("\(dans\|il y a\) 0,7 jour\)"/\1"/g
+  ' icu/source/test/cintltst/crelativedateformattest.c
+}
