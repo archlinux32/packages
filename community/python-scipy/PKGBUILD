@@ -1,0 +1,10 @@
+# increase standard relative tolerance of verify_gauss_quad
+
+prepare() {
+  sed -i '
+    /def verify_gauss_quad/ {
+      N
+      s/rtol=[^,]\+,/rtol=2e-15,/
+    }
+  ' "scipy-${pkgver}/scipy/special/tests/test_orthogonal.py"
+}
