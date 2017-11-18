@@ -2,6 +2,6 @@
 
 prepare() {
   sed -i '
-    s/\("\(dans\|il y a\) 0,7 jour\)"/\1"/g
+    s/\("\(dans\|il y a\) 0,7 jour\)"/\1s"/g
   ' icu/source/test/cintltst/crelativedateformattest.c
 }
