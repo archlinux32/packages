@@ -1,0 +1,2 @@
+# it's linked against /usr/lib/libQt5Core.so from qt5-core
+makedepends+=(qt5-core)
