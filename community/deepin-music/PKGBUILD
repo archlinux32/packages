@@ -1,2 +1,2 @@
 # it's linked against /usr/lib/libQt5Core.so from qt5-core
-depends+=(qt5-core)
+depends+=(qt5-base)
