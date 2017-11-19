@@ -6,7 +6,7 @@ sha256sums+=('5339ece7c0f92667e7dbcfb48d6c0c8ddb322dab4c95d5b01ff8e22d0aebaa3b')
 eval "$(
   declare -f prepare | \
     sed '
-      /0005-gdal-use-CPLFree.patch$/ {
+      /0005-gdal-use-CPLFree.patch/ {
         a \
         \
         # 32-bit compilation bug in jsonview \
