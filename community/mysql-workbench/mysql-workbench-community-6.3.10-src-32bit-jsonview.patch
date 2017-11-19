@@ -1,0 +1,88 @@
+diff -rauN mysql-workbench-community-6.3.10-src/library/forms/jsonview.cpp mysql-workbench-community-6.3.10-src-32bit-json-patch/library/forms/jsonview.cpp
+--- mysql-workbench-community-6.3.10-src/library/forms/jsonview.cpp	2017-11-09 17:11:42.000000000 +0100
++++ mysql-workbench-community-6.3.10-src-32bit-json-patch/library/forms/jsonview.cpp	2017-11-19 20:13:03.643328777 +0100
+@@ -651,8 +651,10 @@
+   if (data != nullptr) {
+     std::stringstream buffer;
+     double number = 0;
++#ifdef DEFINE_UINT64_T_FUNCTIONS
+     int64_t number2 = 0;
+     uint64_t number3 = 0;
++#endif
+     bool retBool = false;
+     auto &storedValue = data->getData();
+     switch (storedValue.getType()) {
+@@ -664,6 +666,7 @@
+         storedValue = number;
+         setData = true;
+         break;
++#ifdef DEFINE_UINT64_T_FUNCTIONS
+       case VInt64:
+         if (!base::is_number(value))
+           break;
+@@ -680,6 +683,7 @@
+         storedValue = number3;
+         setData = true;
+         break;
++#endif
+       case VBoolean:
+         if (!base::isBool(value))
+           break;
+@@ -1073,6 +1077,7 @@
+       node->set_string(1, std::to_string((double)value));
+       node->set_string(2, "Double");
+       break;
++#ifdef DEFINE_UINT64_T_FUNCTIONS
+     case VInt64:
+       node->set_string(1, std::to_string((int64_t)value));
+       node->set_string(2, "Long Integer");
+@@ -1081,6 +1086,7 @@
+       node->set_string(1, std::to_string((uint64_t)value));
+       node->set_string(2, "Unsigned Long Integer");
+       break;
++#endif
+     default:
+       break;
+   }
+@@ -1322,8 +1328,10 @@
+   if (data != NULL) {
+     std::stringstream buffer;
+     double number = 0;
++#ifdef DEFINE_UINT64_T_FUNCTIONS
+     int64_t number2 = 0;
+     uint64_t number3 = 0;
++#endif
+     bool retBool = false;
+     switch (storedValue.getType()) {
+       case VDouble:
+@@ -1335,6 +1343,7 @@
+         node->set_float(column, number);
+         _dataChanged(false);
+ 	break;
++#ifdef DEFINE_UINT64_T_FUNCTIONS
+       case VInt64:
+         if (!base::is_number(value))
+           break;
+@@ -1353,6 +1362,7 @@
+         node->set_float(column, (double)number3);
+         _dataChanged(false);
+         break;
++#endif
+       case VBoolean:
+         if (!base::isBool(value))
+           break;
+@@ -1612,12 +1622,14 @@
+     case VDouble:
+       node->set_float(columnId, (double)value);
+       break;
++#ifdef DEFINE_UINT64_T_FUNCTIONS
+     case VInt64:
+       node->set_long(columnId, (int64_t)value);
+       break;
+     case VUint64:
+       node->set_long(columnId, (uint64_t)value);
+       break;
++#endif
+     default:
+       break;
+   }
