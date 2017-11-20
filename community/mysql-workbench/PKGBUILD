@@ -1,7 +1,7 @@
 # see https://github.com/mysql/mysql-workbench/pull/14/files
 
-source+=('mysql-workbench-community-6.3.10-src-32bit-jsonview.patch')
-sha256sums+=('5339ece7c0f92667e7dbcfb48d6c0c8ddb322dab4c95d5b01ff8e22d0aebaa3b')
+source+=('mysql-workbench-community-6.3.10-32bit.patch')
+sha256sums+=('285dd5899c625a5d9091f8f178a6a58c86508dacd033435ba2dab4938cb238f9')
 
 eval "$(
   declare -f prepare | \
@@ -10,7 +10,7 @@ eval "$(
         a \
         \
         # 32-bit compilation bug in jsonview \
-        patch -Np1 < "${srcdir}"/mysql-workbench-community-6.3.10-src-32bit-jsonview.patch
+        patch -Np1 < "${srcdir}"/mysql-workbench-community-6.3.10-32bit.patch
       }
     '
 )"
