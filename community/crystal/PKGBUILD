@@ -1,0 +1,4 @@
+unset source_x86_64
+unset sha256sums_x86_64
+source_i686=(https://github.com/crystal-lang/crystal/releases/download/$pkgver/$pkgname-$pkgver-$_binary_rel-linux-i686.tar.gz)
+sha256sums_i686=('206be40ae6bb486cf24745f377475f0e311c84b215119372e9ca13768201a460')
