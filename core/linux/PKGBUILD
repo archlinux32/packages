@@ -1,0 +1,2 @@
+# fail if upstream's .config changes
+sha256sums[5]='9c6c4d27d59638d0569ea09a97138bfcfb219f17cdf1138be141380e6654f302'
