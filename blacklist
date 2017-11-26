@@ -1,4 +1,5 @@
 archiso # the official package does not build an iso on i686
+bluegriffon # closed source, doesn't provide a i686 Ubuntu package, complain upstream if you want it
 cuda # cuda 9.0 is 64-bit only
 dmd # fails to build, <a href="https://issues.dlang.org/show_bug.cgi?id=17833">upstream</a> is unresponsive, see <a href="https://bbs.archlinux32.org/viewtopic.php?pid=492#p492">forum</a>
 linux-hardened # not <a href="https://mirror.archlinux32.org/irc-logs/%23archlinux-ports/2017-06-28.html#04:04:01">really useful</a> on i686 + hard to maintain
