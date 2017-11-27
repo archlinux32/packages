@@ -10,3 +10,13 @@ prepare() {
   cd $pkgname-$pkgver
   patch -Np1 -i "$srcdir/valgrind-3.13.0-ignore-redundant-addr16-prefix-in-rel-call.patch"
 }
+
+# remove multilib dependencies and targets
+depends=(
+  $(
+    printf '%s\n' "${depends[@]}" | \
+      sed '/^lib32-glibc\($\|[<>=]\)/d'
+  )
+)
+provides=("${provides[@]/$pkgname-multilib}")
+replaces=("${replaces[@]/$pkgname-multilib}")
