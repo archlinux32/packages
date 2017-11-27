@@ -11,5 +11,6 @@ rubinius # Support for non-64bit platforms was deprecated 1 Jun 2016 and has now
 sbcl # It _should_ compile for 32 bit, but does not -- see <a href="https://bbs.archlinux32.org/viewtopic.php?id=157">forum</a>.
 skia-sharp # does not provide a bin/gn for 32-bit Linux, see FS32#8
 skia-sharp58 # does not provide a bin/gn for 32-bit Linux, see FS32#8
+vc # "Unsupported target architecture 'i686'. No support_???.cpp file exists for this architecture", complain upstream if you need it
 wiredtiger # WiredTiger requires a 64-bit build
 zcash # <a href="https://github.com/zcash/zcash/issues/914">We don't yet support 32bit systems (and we won't by launch) but we can look into this after launch.</a>
