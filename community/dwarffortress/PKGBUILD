@@ -1,0 +1,2 @@
+source_i686=(http://www.bay12games.com/dwarves/df_${_pkgver}_linux32.tar.bz2)
+sha256sums_i686=('d0721cd577fcc14729b76754c30feb6fda7029275bb0a9b1f6bca940fd9b1ffb')
