@@ -1,2 +1,12 @@
 # fail if upstream's .config changes
-sha256sums[7]='2ba9287767bd3c05cfda57674be0ad3d4e13db83d6f19b180bef90e80fa0bb6f'
+sha256sums[6]='70b96391a0ccdbb3a5fe917bd9d870159001a664da6a27ae44fbc826d2869818'
+
+source+=('config.i686')
+sha256sums+=('11eb107f0a3931b3d67c79f57302c7c9bf075270f9503671ba44e199c1131336')
+
+eval "$(
+  declare -f prepare | \
+    sed '
+      s|\.\./config \.config;$|../config.i686 .config;|
+    '
+)"
