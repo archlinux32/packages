@@ -9,4 +9,8 @@ eval "$(
     sed '
       s|\.\./config \.config;$|../config.i686 .config;|
     '
+  declare -f package_linux-headers | \
+    sed '
+      \,/tools/objtool ,d
+    '
 )"
