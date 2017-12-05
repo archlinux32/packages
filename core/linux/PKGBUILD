@@ -12,5 +12,9 @@ eval "$(
   declare -f package_linux-headers | \
     sed '
       \,/tools/objtool" ,d
+      \,arch/x86/Makefile, {
+        a \
+        install -t "${_builddir}/arch/x86" -m644 arch/x86/Makefile_32.cpu
+      }
     '
 )"
