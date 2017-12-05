@@ -16,6 +16,7 @@ source=("https://hackage.haskell.org/packages/archive/${_hkgname}/${pkgver}/${_h
 sha512sums=('f7af615938d8cb9ec40114fc27f196a8bc9991b0aefca9c5de72bdb6872073b6d771f276472f831b8c583eade3d2d1413aee8f194befa450631bdf3ed50ed439')
 provides=("haskell-tasty-hunit=${pkgver}")
 conflicts=('haskell-tasty-hunit')
+replaces=('haskell-tasty-hunit')
 
 build() {
     cd "${srcdir}/${_hkgname}-${pkgver}"
