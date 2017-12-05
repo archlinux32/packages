@@ -11,6 +11,6 @@ eval "$(
     '
   declare -f package_linux-zen-headers | \
     sed '
-      \,/tools/objtool ,d
+      \,/tools/objtool" ,d
     '
 )"
