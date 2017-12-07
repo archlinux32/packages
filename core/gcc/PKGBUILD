@@ -10,7 +10,7 @@ pkgname=(
       grep -vFx 'lib32-gcc-libs'
   )
 )
-# unset 'package_lib32-gcc-libs'
+unset -f 'package_lib32-gcc-libs'
 eval "$(
   declare -f prepare | \
     sed '
