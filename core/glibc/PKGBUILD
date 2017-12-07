@@ -9,7 +9,7 @@ eval "$(
       2 a export CFLAGS="$CFLAGS -mno-tls-direct-seg-refs"
       s,https://bugs.archlinux.org/,https://bugs.archlinux32.org/,
       \,cd .*/lib32-glibc-build,{
-        i }
+        s/.*/}/
         q
       }
     '
