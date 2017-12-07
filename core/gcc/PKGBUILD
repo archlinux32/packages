@@ -29,14 +29,13 @@ eval "$(
   declare -f package_gcc | \
     sed '
       s/"lib32-gcc-libs[^"]*"//g
-      s/$pkgname-multilib//
-      \,make -C $CHOST/32/,d
-      s/{,32}//
-      \, rm .*/lib32/,d
     '
-  declare -f package_gcc-fortran | \
+  declare -f package_gcc-ada | \
     sed '
-      \,/32/,d
+      \,cd .*/32/libada,{
+        N
+        d
+      }
     '
 )"
 eval "$(
@@ -44,6 +43,9 @@ eval "$(
     declare -f package_${name} | \
       sed '
         s/$pkgname-multilib//
+        s/{,32}//
+        \,/lib32/,d
+        \,/32/,d
       '
   done
 )"
