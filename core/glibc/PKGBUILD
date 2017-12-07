@@ -1,16 +1,23 @@
 # remove lib32-* stuff
 
 pkgname=(${pkgname[@]/lib32-*/})
+unset -f 'package_lib32-glibc'
 
 eval "$(
   declare -f build | \
     sed '
       2 a export CFLAGS="$CFLAGS -mno-tls-direct-seg-refs"
       s,https://bugs.archlinux.org/,https://bugs.archlinux32.org/,
+      \,cd .*/lib32-glibc-build,{
+        i }
+        q
+      }
     '
   declare -f package_glibc | \
     sed '
       s,usr/lib/libmvec-\*\.so,,
       s/\S*,mvec\S*//
+      s,STRIP_BINARIES ,\0usr/bin/lddlibc4 ,
+      s,STRIP_STATIC ,\0usr/lib/libm.a ,
     '
 )"
