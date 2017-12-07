@@ -34,6 +34,10 @@ eval "$(
       s/{,32}//
       \, rm .*/lib32/,d
     '
+  declare -f package_gcc-fortran | \
+    sed '
+      \,/32/,d
+    '
 )"
 eval "$(
   for name in "${pkgname[@]}"; do
