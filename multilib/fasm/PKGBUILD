@@ -1,0 +1,11 @@
+depends_i686=('glibc')
+
+eval "$(
+  declare -f build | \
+    sed '
+      s@if .*CARCH.* == .*x86_64@if [ "${CARCH}" == "i686" ]; then\
+        SRCDIR=Linux \
+        ./fasm source/${SRCDIR}/fasm.asm\
+      el\0@
+    '
+)"
