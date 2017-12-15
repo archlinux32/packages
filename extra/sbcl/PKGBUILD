@@ -1,0 +1,12 @@
+# it compiles with clisp on an arch32-box, so we use that ...
+
+makedepends=(
+  "${makedepends[@]/sbcl/clisp}"
+)
+
+eval "$(
+  declare -f build | \
+    sed '
+      / sh make\.sh /s/ sbcl / clisp /g
+    '
+)"
