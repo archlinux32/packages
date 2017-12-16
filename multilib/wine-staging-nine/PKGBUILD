@@ -15,6 +15,6 @@ makedepends=($(
 ))
 
 # and these guys, too
-unset replaces
-unset conflicts
-unset provides
+
+provides=(${provides[@]/wine-wow64*/})
+conflicts=(${conflicts[@]/wine-wow64*/})
