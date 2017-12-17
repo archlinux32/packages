@@ -14,7 +14,7 @@
 #Server = https://archlinux32.vollzornbrot.de/$arch/$repo
 #Server = http://mirror.archlinux32.org/$arch/$repo
 #Server = https://mirror.archlinux32.org/$arch/$repo
-# note: you need to resolve via openNIC (or similar) to access the next mirror
+## note: you need to resolve via openNIC (or similar) to access the next mirror
 #Server = http://mirror.archlinux32.oss/$arch/$repo
 
 ## India
