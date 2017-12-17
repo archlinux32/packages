@@ -1,0 +1,10 @@
+# i686 specific from e853387326a54fe565df56bb0e87c5d5b4393e0b (and before)
+
+eval "$(
+  declare -f build | \
+    sed '
+      2 a \
+        export CFLAGS+=" -march=pentium4" \
+        export CXXFLAGS+=" -march=pentium4"
+    '
+)"
