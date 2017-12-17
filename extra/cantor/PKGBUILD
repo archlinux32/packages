@@ -1,0 +1,6 @@
+eval "$(
+  declare -f build | \
+    sed '
+      /^\s*cd build/ a \ MARCH=pentium4
+    '
+)"
