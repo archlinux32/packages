@@ -2,11 +2,9 @@ source_i686=("http://teamspeak.gameserver.gamed.de/ts3/releases/${pkgver}/TeamSp
 
 sha512sums_i686=('baa5497a9ea57cca17e9d847136e64e5e4ae26dd1d6df1a55933f0db32c55ea7e227529acaf1f3c7008b73d2064f0c12b608858b7da16bd3cff68f30d36c8887')
 
-_TSARCH='x86'
-
 eval "$(
   declare -f prepare | \
     sed '
-      s|TeamSpeak3-Client-linux_amd64|TeamSpeak3-Client-linux_i686|
+      s|TeamSpeak3-Client-linux_amd64|TeamSpeak3-Client-linux_x86|
     '
 )"
