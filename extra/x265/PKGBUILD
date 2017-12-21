@@ -1,0 +1,8 @@
+# disabling assembly code as it seems to be non-32-bittish
+
+eval "$(
+  declare -f build | \
+    sed '
+      s/cmake/cmake -DENABLE_ASSEMBLY=OFF/
+    '
+)"
