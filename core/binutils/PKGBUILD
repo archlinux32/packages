@@ -1,0 +1,6 @@
+eval "$(
+  declare -f build | \
+    sed '
+      s/--enable/--enable-64-bit-bfd \0/
+    '
+)"
