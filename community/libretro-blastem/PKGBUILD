@@ -1,6 +1,6 @@
-# the return value of build() is the return value of the last statement
-
 eval "$(
   declare -f build | \
-    sed "/\$CARCH == 'x86_64'/d"
+    sed '
+      s/x86_64/x86/
+    '
 )"
