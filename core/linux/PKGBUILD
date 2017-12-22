@@ -4,7 +4,7 @@
 sha256sums[4]='3d139e6cfc42a0bb52a6c49a2bb94ff523dc728b8d548178dbc0a90726eb4151'
 
 source+=('config.i686')
-sha256sums+=('09be4894d84a9a24cc1e2a1d1153f2949efedf72824a1cd97902e0f3ff2dda18')
+sha256sums+=('60a261deee0a4b8d3b71dbd1692629520cf0cc6a0dec3520a2ee3476da028a83')
 
 eval "$(
   declare -f prepare | \
