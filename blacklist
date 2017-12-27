@@ -8,6 +8,7 @@ luxrays # does not compile on i686 - see FS#54960
 nsjail # kafel has no 32-bit Intel support, see also <a href="https://bbs.archlinux32.org/viewtopic.php?pid=795#p795">forum</a>
 opera # dropped 32-bit version in version 46.0.2597.26
 python-pytorch # Gloo can only be built on 64-bit systems
+reflector # supports Archlinux mirrors and not Archlinux32 mirrors (yet)
 rubinius # Support for non-64bit platforms was deprecated 1 Jun 2016 and has now been removed. If non-64bit support is a critical feature for your application, please email contact@rubinius.com
 skia-sharp # does not provide a bin/gn for 32-bit Linux, see FS32#8
 skia-sharp58 # does not provide a bin/gn for 32-bit Linux, see FS32#8
