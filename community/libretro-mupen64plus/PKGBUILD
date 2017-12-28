@@ -4,3 +4,5 @@ eval "$(
       s/x86_64/x86/
     '
 )"
+# why does i686 makedepend on that and x86_64 not?
+makedepends+=(nasm)
