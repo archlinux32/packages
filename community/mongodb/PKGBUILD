@@ -1,0 +1,11 @@
+# wiredtiger is 64-bit only and blacklisted, so build mongodb without it
+
+depends=($(
+  printf '%s\n' "${depends[@]}" | \
+    sed '/^wiredtiger/d'
+))
+
+_scons_args=($(
+  printf '%s\n' "${_scons_args[@]}" | \
+    sed 's/--use-system-wiredtiger/--wiredtiger=off/g'
+))
