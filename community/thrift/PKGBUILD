@@ -1,0 +1,8 @@
+# somehow, the directory of boost is wrongly determined during configure
+
+eval "$(
+  declare -f build | \
+    sed '
+      4 a sed -i '"'"'/^\\s*libsubdirs=/{ :a; /\\*)/{ s/$/\\nlibsubdirs=lib/; b; }; N; ba; }'"'"' configure
+    '
+)"
