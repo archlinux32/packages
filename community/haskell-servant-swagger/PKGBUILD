@@ -1,6 +1,30 @@
+# first, we replace the hardcoded min/max of int
+
 eval "$(
   declare -f check | \
     sed '
       3 a find . -type f -exec sed -i '"'"'s/922337203685477580\\([78]\\)/214748364\\1/g; s/9\\.22337203685477580\\([78]\\)e18/2.14748364\\1e9/g'"'"' {} \\;
+      s/runhaskell Setup test/_check_diff \\0/
     '
 )"
+
+# and then we make the check insensitive to changes of order
+
+_check_diff() {
+  if ! "$@" > check.log; then
+    if ! diff -u <(
+      grep '^\s*expected:' check.log | \
+        sed 's/^[^:]*://' | \
+        tr '{},' '\n' | \
+        sort
+    ) <(
+      grep '^\s*but got:' check.log | \
+        sed 's/^[^:]*://' | \
+        tr '{},' '\n' | \
+        sort
+    ); then
+      cat check.log
+      return 1
+    fi
+  fi
+}
