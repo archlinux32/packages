@@ -1,0 +1,10 @@
+# guile cmake checks allow int* to be casted to size_t*, so we
+# add -fpermissive to make the int cast fail and the size_t cast
+# succeed
+
+eval "$(
+  declare -f prepare | \
+    sed '
+      /cd TeXmacs-${pkgver}-src/ a \ sed -i "/SET(CMAKE_REQUIRED_FLAGS/s/-Werror /-Werror -fpermissive /" CMakeLists.txt
+    '
+)"
