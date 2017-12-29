@@ -1,10 +1,10 @@
 # guile cmake checks allow int* to be casted to size_t*, so we
-# add -fpermissive to make the int cast fail and the size_t cast
-# succeed
+# add force guile_str_size_t to size_t after the test (no matter
+# what the outcome is)
 
 eval "$(
   declare -f prepare | \
     sed '
-      /cd TeXmacs-${pkgver}-src/ a \ sed -i "/SET(CMAKE_REQUIRED_FLAGS/s/-Werror /-Werror -fpermissive /" CMakeLists.txt
+      /cd TeXmacs-${pkgver}-src/ a \ sed -i "/ENDIF(_guile_str_size_test)/ a \ SET(guile_str_size_t size_t)" CMakeLists.txt
     '
 )"
