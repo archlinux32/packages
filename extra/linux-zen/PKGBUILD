@@ -1,7 +1,7 @@
-# upstream git: 5153c5f9521411856a06f2a954b25a8c73c9c3fe
+# upstream git: 09dd6d8cf61bc821cf7065d3d8d46ea99f7030a3
 
 # fail if upstream's .config changes
-sha256sums[6]='0d44ab53ed9c98d9bb517cea8ad92e7aa1cab3f4256c0816560498d583590df4'
+sha256sums[6]='dce3b088b76c1b3c41697f1013b12655fa7701792a036d1d0987301e9e3d24be'
 
 source+=('config.i686')
 sha256sums+=('d63c61ed69c4bad3166bd0e98544f1d8a79adb0403b46c5b2b0b09d23ed971aa')
