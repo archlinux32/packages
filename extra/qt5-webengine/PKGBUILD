@@ -1,0 +1,3 @@
+# hotfix for 'khronos development headers appear to be missing (mesa/libegl1-mesa-dev)'
+
+makedepends+=('mesa')
