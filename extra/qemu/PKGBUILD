@@ -1,7 +1,15 @@
+# ceph doesn't run on 32-xit currently (see FS32#21)
+
 makedepends=(${makedepends[@]/ceph})
+
+pkgname=($(
+  printf '%s\n' "${pkgname[@]}" | \
+    sed '/^qemu-block-rbd/d'
+))
+
 eval "$(
-  declare -f package_qemu-block-rbd | \
+  declare -f _package | \
     sed '
-      s/ceph//
+      s@rm qemu/block-{iscsi,rbd,gluster}.so@rm qemu/block-{iscsi,gluster}.so@
     '
 )"
