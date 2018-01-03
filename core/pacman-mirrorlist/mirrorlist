@@ -31,3 +31,4 @@
 
 ## United States
 #Server = https://32.arlm.tyzoid.com/$arch/$repo
+#Server = https://mirror.math.princeton.edu/pub/archlinux32/$arch/$repo
