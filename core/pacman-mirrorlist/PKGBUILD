@@ -1,4 +1,4 @@
 # Maintainer: Erich Eckner <deep42thought@archlinux32.org>
 pkgver=20180103
-sha256sums=('c4f4aa5c5489ca4d226db3e1ae3ea9f4045bd010513548e408500a1ea811c02b')
-md5sums=('8edbed0f1f4ae3ca74f95f867612cb6b')
+sha256sums=('153a7074b0230914f91a5d2f3ff8a6eeaed53873a9ce72419ea43ca1599f289e')
+md5sums=('ce580481357a73cc84a7fcc3c905318b')
