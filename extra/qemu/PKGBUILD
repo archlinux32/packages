@@ -1,0 +1,7 @@
+makedepends=(${makedepends[@]/ceph})
+eval "$(
+  declare -f package_qemu-block-rbd | \
+    sed '
+      s/ceph//
+    '
+)"
