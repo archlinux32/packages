@@ -1,0 +1,3 @@
+# ceph doesn't run on 32-bit currently (see FS32#21)
+
+depends=(${depends[@]/ceph})
