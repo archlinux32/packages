@@ -1,3 +1,6 @@
 # remove mongodb from checkdepends - it's not available for i686 and apparently not needed either
 checkdepends=(${checkdepends[@]/mongodb})
 checkdepends=(${checkdepends[@]/consul})
+
+# ceph doesn't run on 32-bit currently (see FS32#21)
+checkdepends=(${checkdepends[@]/ceph})
