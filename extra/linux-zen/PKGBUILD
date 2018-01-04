@@ -1,10 +1,10 @@
-# upstream git: 09dd6d8cf61bc821cf7065d3d8d46ea99f7030a3
+# upstream git: 22001a675b3588001724a7c354a7d667d585c8a3
 
 # fail if upstream's .config changes
-sha256sums[6]='dce3b088b76c1b3c41697f1013b12655fa7701792a036d1d0987301e9e3d24be'
+sha256sums[6]='f9cf56592b6549b87b19bd4e2bd3ca4c693034f7fa2d7fbf8fa8842308a2df94'
 
 source+=('config.i686')
-sha256sums+=('d63c61ed69c4bad3166bd0e98544f1d8a79adb0403b46c5b2b0b09d23ed971aa')
+sha256sums+=('8270f8f4f251639f5d287c1ba45464e05245f7758452b80ba566a5cf0e02839a')
 
 eval "$(
   declare -f prepare | \
