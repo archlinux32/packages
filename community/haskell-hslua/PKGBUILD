@@ -1,0 +1,4 @@
+# See https://github.com/jgm/pandoc/issues/4224 and
+# https://github.com/jgm/pandoc/issues/3805
+
+eval "$(declare -f build | sed 's| -f-lua_32bits| -flua_32bits|')"
