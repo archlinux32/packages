@@ -1,0 +1,18 @@
+# we override almost everything
+
+pkgver=20171218
+pkgrel=2
+pkgdesc='Tools for Arch Linux 32 package maintainers'
+license=('GPL')
+url='https://github.com/archlinux32/devtools32/'
+source=("$pkgname-$pkgver.tar.gz::https://github.com/archlinux32/${pkgname}32/archive/v$pkgver.tar.gz")
+unset md5sums
+sha512sums=('b8301f97baedc927c196ebcec85e998af68788a34c327accfe28370048fa0b917bd817cb5d81a339ad2294d2edba4691d58f2a0750a64ef4d1cc3769dda83ef0')
+unset validpgpkeys
+
+eval "$(
+  declare -f prepare build check package | \
+    sed '
+      s/\${pkgname}/\032/
+    '
+)"
