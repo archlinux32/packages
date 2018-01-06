@@ -1,7 +1,7 @@
 makedepends=(
   $(
     printf '%s\n' "${makedepends[@]}" | \
-      grep -v '^lib32-glibc\($\|[<>=]\)'
+      grep -v '^lib32-\(glibc\|gcc-libs\)\($\|[<>=]\)'
   )
 )
 pkgname=(

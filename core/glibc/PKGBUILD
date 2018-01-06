@@ -3,6 +3,13 @@
 pkgname=(${pkgname[@]/lib32-*/})
 unset -f 'package_lib32-glibc'
 
+makedepends=(
+  $(
+    printf '%s\n' "${makedepends[@]}" | \
+      grep -v '^lib32-gcc-libs\($\|[<>=]\)'
+  )
+)
+
 eval "$(
   declare -f build | \
     sed '
