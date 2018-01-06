@@ -12,10 +12,10 @@ prepare() {
 }
 
 # remove multilib dependencies and targets
-depends=(
+makedepends=(
   $(
-    printf '%s\n' "${depends[@]}" | \
-      sed '/^lib32-glibc\($\|[<>=]\)/d'
+    printf '%s\n' "${makedepends[@]}" | \
+      sed '/^lib32-\(gcc-libs\|glibc\)\($\|[<>=]\)/d'
   )
 )
 provides=("${provides[@]/$pkgname-multilib}")
