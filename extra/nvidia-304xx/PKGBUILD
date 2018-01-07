@@ -1,4 +1,0 @@
-source_i686+=("http://us.download.nvidia.com/XFree86/Linux-x86/${pkgver}/NVIDIA-Linux-x86-${pkgver}.run")
-sha512sums_i686=('021c5a88d50489aa0a1c7eac14259e23542b93578ae339995a2e38b786d06d239968c07933cab3fb78a922cffc7e213d6fa3fe07e34065a9c7f03e24f8729370')
-_pkg="NVIDIA-Linux-x86-${pkgver}"
-
