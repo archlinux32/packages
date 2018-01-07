@@ -2,5 +2,10 @@ _arch='x86'
 _pkg="${_pkg%-no-compat32}"
 _pkg="${_pkg/x86_64/x86}"
 
-source[1]="http://us.download.nvidia.com/XFree86/Linux-x86/${pkgver}/NVIDIA-Linux-x86-${pkgver}.run"
-sha512sums[1]='8dacd5345a5794e862f4106ab9e8e402defa7883dd176c243d019209b560fe955d7576a13936364c01c5a249f15df58208308c9378c12c3438784376e5fb806c'
+for ((i=${#source[@]}; i>0; i--)); do
+  if [ "${source[${i}]}" = "http://us.download.nvidia.com/XFree86/Linux-x86_64/${pkgver}/NVIDIA-Linux-x86_64-${pkgver}-no-compat32.run" ]; then
+    break;
+  fi
+done
+source[${i}]="http://us.download.nvidia.com/XFree86/Linux-x86/${pkgver}/NVIDIA-Linux-x86-${pkgver}.run"
+sha512sums[${i}]='8dacd5345a5794e862f4106ab9e8e402defa7883dd176c243d019209b560fe955d7576a13936364c01c5a249f15df58208308c9378c12c3438784376e5fb806c'
