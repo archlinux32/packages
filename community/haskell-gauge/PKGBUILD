@@ -1,0 +1,10 @@
+# temporarily disabled 'verbose' test, see upstream:
+# https://github.com/vincenthz/hs-gauge/issues/54
+
+prepare() {
+    cd "${srcdir}/${_hkgname}-${pkgver}"
+
+    sed -i '/test-suite verbose/, /test-suite quick/ { s/\(.*\)/#\1/ }' gauge.cabal	
+    sed -i 's/#test-suite quick/test-suite quick/' gauge.cabal
+    sed -i '/^#.*/d' gauge.cabal
+}
