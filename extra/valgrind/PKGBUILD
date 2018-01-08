@@ -20,3 +20,6 @@ makedepends=(
 )
 provides=("${provides[@]/$pkgname-multilib}")
 replaces=("${replaces[@]/$pkgname-multilib}")
+
+unset checkdepends
+unset check
