@@ -1,0 +1,26 @@
+--- a/rts/build/cmake/TestCXXFlags.cmake	2017-09-24 20:01:29.000000000 +0200
++++ b/rts/build/cmake/TestCXXFlags.cmake	2018-01-09 14:16:55.894197136 +0100
+@@ -161,23 +161,8 @@
+ 		ERROR_VARIABLE linkerVersion
+ 	)
+ 	set(hasGold FALSE)
+-	if ("${linkerVersion}" MATCHES "gold")
+-		set(hasGold TRUE)
+-	endif()
+ 
+ 
+-	if    (NOT hasGold AND NOT WIN32) #FIND_PROGRAM fails in crosscompile environments (it detects the native ld.gold)
+-		# since gcc 4.8 it is possible to switch the linker via that argument
+-		CHECK_CXX_ACCEPTS_FLAG("-fuse-ld=gold" HAS_USE_LD)
+-		IF    (HAS_USE_LD)
+-			FIND_PROGRAM(LD_GOLD ld.gold)
+-			if    (LD_GOLD)
+-				set(hasGold TRUE)
+-				set(LDGOLD_CXX_FLAGS "-fuse-ld=gold")
+-			endif ()
+-		EndIf ()
+-	endif ()
+-
+ 	if    (hasGold)
+ 		set(LDGOLD_FOUND TRUE)
+ 		set(LDGOLD_LINKER_FLAGS "")

@@ -1,0 +1,13 @@
+# https://springrts.com/mantis/view.php?id=5413
+
+sha512sums[1]='7d29099f589f4ab70262ebb307f905bdaa7e20606421ca2efaf69d391b271d3e1015f44087161106546ebe1ef197dc758c5de0120feff3f473e69ec96555d3a8'
+
+eval "$(
+  declare -f prepare | \
+    sed '
+      2 a \
+        cd spring_$pkgver \
+        patch -Np1 -i ../gold-linker.patch \
+        cd ..
+    '
+)"
