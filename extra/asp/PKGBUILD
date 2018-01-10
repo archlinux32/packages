@@ -1,0 +1,18 @@
+# we override almost everything
+
+pkgver=0.0
+pkgrel=1
+url='https://github.com/archlinux32/asp32/'
+license=(MIT)
+source=("$pkgname-$pkgver.tar.gz::https://github.com/archlinux32/${pkgname}32/archive/v$pkgver.tar.gz")
+sha512sums=('2521125cc49139700dae77b52ffc0db339ddbf1347d37f49e03b896214a61c624fa70c530d4254b3f26c92b4cd6e3fcea0ebd4cee0d1e14e16a40a9c6a702a67')
+
+unset sha256sums
+unset validpgpkeys
+
+eval "$(
+  declare -f prepare build check package | \
+    sed '
+       s/\${pkgname}\|asp/\032/
+    '
+)"
