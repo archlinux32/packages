@@ -1,0 +1,16 @@
+diff -rauN vlc-2.2.8/modules/services_discovery/upnp.cpp vlc-2.2.8-libupnp-patch/modules/services_discovery/upnp.cpp
+--- vlc-2.2.8/modules/services_discovery/upnp.cpp	2017-09-07 12:26:08.000000000 +0200
++++ vlc-2.2.8-libupnp-patch/modules/services_discovery/upnp.cpp	2018-01-12 11:06:51.349999981 +0100
+@@ -50,6 +50,12 @@
+ typedef Upnp_Event UpnpEvent;
+ typedef Upnp_Event_Subscribe UpnpEventSubscribe;
+ 
++#undef UpnpDiscovery_get_Location_cstr
++#undef UpnpDiscovery_get_DeviceID_cstr
++#undef UpnpActionComplete_get_ActionResult
++#undef UpnpEvent_get_SID_cstr
++#undef UpnpEventSubscribe_get_SID_cstr
++
+ static const char* UpnpDiscovery_get_Location_cstr( const UpnpDiscovery* p_discovery )
+ {
+   return p_discovery->Location;
