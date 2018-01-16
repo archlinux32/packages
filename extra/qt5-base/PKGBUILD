@@ -1,6 +1,6 @@
 eval "$(
   declare -f build | \
     sed '
-      s@./configure@./configure -no-ssl2@g
+      s@./configure@./configure -no-sse2@g
     '
 )"
