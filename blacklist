@@ -15,6 +15,7 @@ mongodb # dropped support for 32-bit in version 3.4
 nsjail # kafel has no 32-bit Intel support, see also <a href="https://bbs.archlinux32.org/viewtopic.php?pid=795#p795">forum</a>
 opera # dropped 32-bit version in version 46.0.2597.26
 opera-ffmpeg-codecs # as opera itself is blacklisted
+ospray # "Your Embree build needs to support at least one ISA >= SSE4.1!"
 parallel-netcdf-openmpi # requires MPI_Offset >= 8, which is not (yet?) possible on 32 bits - see https://github.com/open-mpi/ompi/issues/3195
 python-pytorch # Gloo can only be built on 64-bit systems
 qcef # contains CEF binaries (not current ones) for 64-bit and MIPS only, no 32-bit Intel. Discuss with the authors if you need it.
