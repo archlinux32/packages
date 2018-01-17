@@ -1,3 +1,3 @@
 source_i686+=("http://us.download.nvidia.com/XFree86/Linux-x86/${pkgver}/NVIDIA-Linux-x86-${pkgver}.run")
-md5sums_i686=('42e9c98e156f6ac2658ee526d796a428')
+md5sums_i686=('a2895c566341506677d8293b4aec0dc0')
 _pkg="NVIDIA-Linux-x86-${pkgver}"
