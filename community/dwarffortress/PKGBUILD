@@ -1,2 +1,7 @@
-source_i686=(http://www.bay12games.com/dwarves/df_${_pkgver}_linux32.tar.bz2)
-sha256sums_i686=('b92ae26f00aaea8678892a735d2dbad89d5701085d22cb315c462346dc2431ad')
+for ((i=${#source[@]}; i>0; i--)); do
+  if [ "${source[${i}]}" = "http://www.bay12games.com/dwarves/df_${_pkgver}_linux.tar.bz2" ]; then
+    break;
+  fi
+done
+source[${i}]="http://www.bay12games.com/dwarves/df_${_pkgver}_linux32.tar.bz2"
+sha256sums[${i}]='b92ae26f00aaea8678892a735d2dbad89d5701085d22cb315c462346dc2431ad'
