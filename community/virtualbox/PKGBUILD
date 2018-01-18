@@ -4,5 +4,11 @@ eval "$(
   declare -f build | \
     sed '
       s|kmk|kmk -j 1|
+    ';
+)"
+eval "$(
+  declare -f build | \
+    sed '
+      /source/ i \ sed -i 's/-pipe//g' Config.kmk
     '
 )"
