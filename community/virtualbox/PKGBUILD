@@ -1,11 +1,33 @@
-# Parallel builds lead to "virtual memory exhausted"?
+# avoid "virtual memory exhausted: Operation not permitted"
+# note: proper sudo rights for the user running the build slave are necessare
+eval "$(
+  declare -f build | \
+    sed '
+      /source/ i \ sudo sysctl vm.mmap_min_addr=0
+    '
+)"
 
+# restore the default after building vboxwebsrv
+# (On Arch 65536 seems to be the boot-default)
+eval "$(
+  declare -f build | \
+    sed '
+      /kmk.*packing/ a \ sudo sysctl vm.mmap_min_addr=65536
+    '
+)"
+
+# Parallel builds lead to "virtual memory exhausted"?
+# not sure, if still needed (or in fact, working)
 eval "$(
   declare -f build | \
     sed '
       s|kmk|kmk -j 1|
     ';
 )"
+
+# let's not use too much memory, gcc tmpfiles can in this
+# case also be put on a real /tmp (instead of tmpfs) to reduce
+# preasure on the RAM
 eval "$(
   declare -f build | \
     sed '
