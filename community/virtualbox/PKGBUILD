@@ -1,20 +1,4 @@
-# avoid "virtual memory exhausted: Operation not permitted"
-# note: proper sudo rights for the user running the build slave are necessare
-eval "$(
-  declare -f build | \
-    sed '
-      /source/ i \ sudo sysctl vm.mmap_min_addr=0
-    '
-)"
-
-# restore the default after building vboxwebsrv
-# (On Arch 65536 seems to be the boot-default)
-eval "$(
-  declare -f build | \
-    sed '
-      /kmk.*packing/ a \ sudo sysctl vm.mmap_min_addr=65536
-    '
-)"
+# set manually sysctl vm.mmap_min_addr=0 before building this package
 
 # Parallel builds lead to "virtual memory exhausted"?
 # not sure, if still needed (or in fact, working)
