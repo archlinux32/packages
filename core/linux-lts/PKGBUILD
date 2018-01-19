@@ -1,8 +1,8 @@
 source+=('config-i686')
-sha256sums+=('533f414d1f95e848166baf3870286216295e249e03220e8f9383950df325a338')
+sha256sums+=('4570b5a331182f4d18fb5a9c8d981c490560bb95b3419bf8ba498109b7469ea2')
 
 # fail if upstream's .config changes
-sha256sums[4]='3190c72835aa75ee984b83bc463ebf317c9f50d09200808bfe08464e5a08bc56'
+sha256sums[4]='3de28992dd99ed2dbe327042a715dd0293c3ab37a46c74fa97b39c48403bc9f4'
 
 eval "$(
   declare -f prepare | \
