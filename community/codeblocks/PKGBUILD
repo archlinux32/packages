@@ -1,0 +1,8 @@
+# doesn't find boost otherwise
+
+eval "$(
+  declare -f build | \
+    sed '
+      s,configure ,\0--with-boost-libdir=/usr/lib ,
+    '
+)"
