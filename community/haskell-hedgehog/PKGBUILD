@@ -1,0 +1,2 @@
+# disable tests, for now
+unset check()
