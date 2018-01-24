@@ -4,3 +4,5 @@ eval "$(
       /install -race /d
     '
 )"
+
+export GOARCH=386 GO386=387
