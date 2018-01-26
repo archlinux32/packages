@@ -1,0 +1,4 @@
+source_i686=("https://ftp.gnu.org/gnu/mit-scheme/stable.pkg/$pkgver/$pkgname-$pkgver-i386.tar.gz"
+             "https://ftp.gnu.org/gnu/mit-scheme/stable.pkg/$pkgver/$pkgname-$pkgver-i386.tar.gz.sig")
+md5sums_i686=('b80458f85b9521bdfb0620edc89e3e61'
+              'SKIP')
