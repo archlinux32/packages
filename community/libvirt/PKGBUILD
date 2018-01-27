@@ -1,4 +1,4 @@
 # ceph doesn't run on 32-bit currently (see FS32#21)
 
 depends=("${depends[@]/ceph-libs/}")
-makedepends=("${makedepends[@]/ceph/}")
+makedepends=("${makedepends[@]/ceph-libs/}")
