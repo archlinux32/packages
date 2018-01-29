@@ -3,7 +3,7 @@ checkdepends=(
     printf '%s\n' "${checkdepends[@]}" | \
       sed '
         s/^java-environment>=8$/java-environment=8/
-        s/^dmd$/ldc/
+        /^dmd$/d
       '
   )
 )
