@@ -1,8 +1,0 @@
-source+=('make-install-race.patch')
-sha256sums+=('6a5cbcf16f199f90428a6a2cecf05a3669f4580011cf19e90b2870d44f7e7feb')
-eval "$(
-  declare -f prepare | \
-    sed '
-      3 a patch -Np1 -i ../make-install-race.patch
-    '
-)"
