@@ -7,7 +7,7 @@
 #Server = http://arch32.mirrors.simplysam.us/$arch/$repo
 
 ## France
-#Server = https://archlinux32.mirror.roelf.org/$arch/$repo
+##Server = https://archlinux32.mirror.roelf.org/$arch/$repo
 
 ## Germany
 #Server = http://archlinux32.vollzornbrot.de/$arch/$repo
