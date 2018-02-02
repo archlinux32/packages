@@ -1,14 +1,9 @@
-source+=('config-i686')
-sha256sums+=('4570b5a331182f4d18fb5a9c8d981c490560bb95b3419bf8ba498109b7469ea2')
-
 # fail if upstream's .config changes
-sha256sums[4]='3de28992dd99ed2dbe327042a715dd0293c3ab37a46c74fa97b39c48403bc9f4'
+if [ "${sha256sums[4]}" = 'c645053c4525a1a70d5c10b52257ac136da7e9059b6a4a566a857a3d42046426' ]; then
+  sha256sums[4]='a7222ca3526ef6042ad79700c36bdcd915f7c3ceb386fd3c89fa2567fd18707a'
+fi
 
 eval "$(
-  declare -f prepare | \
-    sed '
-      s|cat "${srcdir}/config" > ./.config|cat "${srcdir}/config-i686" > ./.config|
-    '
   declare -f package_linux-lts-headers | \
     sed '
       /^\s*cp arch\/${KARCH}\/Makefile.*$/ {
