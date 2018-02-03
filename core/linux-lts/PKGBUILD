@@ -7,6 +7,6 @@ eval "$(
   declare -f package_linux-lts-headers | \
     sed '
       \,/tools/objtool" ,d
-      s,^\(.*/x86\/Makefile\)\(.*\)$,\1\2\n\132\2,
+      \,arch/x86/Makefile,a cp arch/x86/Makefile_32.cpu "${pkgdir}/usr/lib/modules/${_kernver}/build/arch/x86/"
     '
 )"
