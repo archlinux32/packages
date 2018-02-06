@@ -1,0 +1,6 @@
+makedepends=(
+  $(
+    printf '%s\n' ${makedepends} | \
+      sed '/^vc$/d'
+  )
+)
