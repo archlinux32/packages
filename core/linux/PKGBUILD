@@ -1,16 +1,11 @@
 # upstream git: 56c96ae9e128a28f383faf72361db89c4d45f17f
 
 # fail if upstream's .config changes
-sha256sums[4]='edaf7bebcaf3032e3bf15353e0773e39872c73fc024ca4d23383195a13745b2e'
-
-source+=('config.i686')
-sha256sums+=('2ba9fb36a8657a92972b8c4bb8e2e4ebd795b9abcf44092f5a4e006cab1fd07c')
+if [ "${sha256sums[4]}" = '76fdf8b3a2451cb38ec5b66cd266d5b2411353bc5e7a9d3bdefc7cf113b32e5c' ]; then
+  sha256sums[4]='a75d682dc84697d4b8de83cbd0044ae0b6ba002531a5dacb529aa3d1ed185c77'
+fi
 
 eval "$(
-  declare -f prepare | \
-    sed '
-      s|\.\./config \.config;$|../config.i686 .config;|
-    '
   declare -f package_linux-headers | \
     sed '
       \,/tools/objtool" ,d
