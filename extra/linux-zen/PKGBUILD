@@ -1,16 +1,9 @@
-# upstream git: 56c96ae9e128a28f383faf72361db89c4d45f17f
-
 # fail if upstream's .config changes
-sha256sums[6]='a85bd6e7ff862148b10751a064c710aca6eb9c39a0ba8c06363c299def87d30f'
-
-source+=('config.i686')
-sha256sums+=('e30b5c4451533bfc92c8afff03f04d7084c77b2ec87395089c78f0db20261a26')
+if [ "${sha256sums[6]}" = '9a27fb469cbdd6ac93b19b626bec9e113b94ca2b7cf1fcfd3a29a5c627b8f395' ]; then
+  sha256sums[6]='d300a6a2d85005d9472883b0ba47ae88680170a3ab40ca470383e4e4cef03e88'
+fi
 
 eval "$(
-  declare -f prepare | \
-    sed '
-      s|\.\./config \.config;$|../config.i686 .config;|
-    '
   declare -f package_linux-zen-headers | \
     sed '
       \,/tools/objtool" ,d
