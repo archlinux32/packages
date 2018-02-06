@@ -2,7 +2,7 @@
 
 # fail if upstream's .config changes
 if [ "${sha256sums[4]}" = '76fdf8b3a2451cb38ec5b66cd266d5b2411353bc5e7a9d3bdefc7cf113b32e5c' ]; then
-  sha256sums[4]='a75d682dc84697d4b8de83cbd0044ae0b6ba002531a5dacb529aa3d1ed185c77'
+  sha256sums[4]='14a993f1c0a85b504c3dfd4d5d346ec5a27593a9b45ef57d81e04141cc78731c'
 fi
 
 eval "$(
