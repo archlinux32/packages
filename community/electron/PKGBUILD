@@ -1,6 +1,6 @@
 eval "$(
   declare -f build | \
     sed '
-      \,^\s*script/bootstrap.py , s/py/py --target_arch=x86/
+      \,^\s*script/bootstrap.py , s/py/py --target_arch=ia32/
     '
 )"
