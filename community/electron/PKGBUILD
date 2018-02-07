@@ -1,4 +1,11 @@
+source+=('allow-i686.patch')
+sha256sums+=('c209475c16b506d8d888a54c8564718cf9775f450d1867e19e86a03d99a119be')
+
 eval "$(
+  declare -f prepare | \
+    sed '
+      3 a patch -Np1 -i "${srcdir}"/allow-i686.patch
+    '
   declare -f build | \
     sed '
       \,^\s*script/bootstrap.py , s/py/py --target_arch=ia32/
