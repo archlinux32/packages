@@ -3,8 +3,10 @@ makedepends+=('libglvnd')
 unset source
 unset sha256sums
 
-source_i686=("http://us.download.nvidia.com/XFree86/Linux-x86/${pkgver}/NVIDIA-Linux-x86-${pkgver}.run")
-sha512sums_i686=('59f5d832a0372ec5a19e356f3cf9b82f1f704381683eca845092659df03791b21511c32f3c2bb5a263978c86b2008c1fdfde3b3a125100235948291cad99f8b3')
+source_i686=("http://us.download.nvidia.com/XFree86/Linux-x86/${pkgver}/NVIDIA-Linux-x86-${pkgver}.run"
+             "4.15-FS57305.patch")
+sha512sums_i686=('59f5d832a0372ec5a19e356f3cf9b82f1f704381683eca845092659df03791b21511c32f3c2bb5a263978c86b2008c1fdfde3b3a125100235948291cad99f8b3'
+             '145d436f117455a1a8315b31dc2c9fce3c90c135d8c530b8b8da0e70548f48d9')
 
 _pkg="NVIDIA-Linux-x86-${pkgver}"
 
