@@ -1,0 +1,9 @@
+# See FS32#28, problems running the postgresql server with pifpaf and
+# running system tests against it.
+
+eval "$(
+  declare -f check | \
+    sed '
+      /cd/ i return
+    '
+)"
