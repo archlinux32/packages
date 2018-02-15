@@ -1,0 +1,9 @@
+# nasm: error: more than one input file specified
+# the -- is the problem, patching it out of Makefiles to avoid retooling
+
+eval "$(
+  declare -f build | \
+    sed '
+      4 a find . -name Makefile -exec sed -i "/nasm/s/--//g" {} \\;
+    '
+)"
