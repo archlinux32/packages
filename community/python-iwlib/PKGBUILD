@@ -1,0 +1,8 @@
+# pathes to find built python module contains architecture
+
+eval "$(
+  declare -f check | \
+    sed '
+      /export PYTHONPATH=/s/x86_64/i686/
+    '
+)"
