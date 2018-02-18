@@ -1,5 +1,5 @@
 source+=('allow-i686.patch')
-sha256sums+=('c209475c16b506d8d888a54c8564718cf9775f450d1867e19e86a03d99a119be')
+sha512sums+=('bce6716f88c0ed7acc72f90ef62f7c4a28b88e98d7fc8dcb6abf545eb6ab7de11e06191618490ed83e7b38b08489063357682ebb909dc952e21cb6dd7b6ddb38')
 
 eval "$(
   declare -f prepare | \
