@@ -2,7 +2,6 @@ bluegriffon # closed source, doesn't provide a i686 Ubuntu package anymore since
 bluegriffon-i18n # see bluegriffon
 ceph # fails fatally in check() - see <a href="https://bugs.archlinux32.org/index.php?do=details&task_id=21">FS32#21</a>
 cuda # cuda 9.0 is 64-bit only
-dfmt # requires dmd to build, which is blacklisted
 dmd # fails to build, <a href="https://issues.dlang.org/show_bug.cgi?id=17833">upstream</a> is unresponsive, see <a href="https://bbs.archlinux32.org/viewtopic.php?pid=492#p492">forum</a>
 dotnet-core # not available for 32-bit on linux, see <a href="https://github.com/dotnet/core/blob/master/release-notes/download-archives/2.0.5-download.md">here</a>
 fox-devel # fails on non 64-bit Intel, blacklisting for now, see FS32#13
