@@ -8,19 +8,5 @@ eval "$(
     '
 )"
 
-# this test hangs (why?)
-
-eval "$(
-  declare -f prepare | \
-    sed '
-      2 a \
-        sed -i '"'"' \
-          /loadfile loading/ { \
-            :a \
-              /^.*\\n$/d \
-              N \
-              ba \
-          } \
-        '"'"' "$_hkgname-$pkgver/test/Foreign/Lua/ApiTest.hs"
-    '
-)"
+unset check
+unset checkdepends
