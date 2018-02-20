@@ -1,7 +1,7 @@
 eval "$(
   declare -f build | \
     sed '
-      /install -race /d
+      /install\( .*\)\? -race /d
     '
 )"
 
