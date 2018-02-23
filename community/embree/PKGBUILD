@@ -1,7 +1,7 @@
-source+=('embree-2.16.4-32bit-compile-flags.patch')
-sha256sums+=('ae9c42acc61ee262bbea012f071ef27e34b1cc895657e869f4d19af51d881bdf')
+source+=('embree-2.17.3-32bit-compile-flags.patch')
+sha256sums+=('b918095b300ad0532a9e217d4bf0a1c5fa5183596e63aab5547f93ce6aeb9aab')
 
 prepare() {
 	cd "$srcdir/$pkgname-$pkgver"
-	patch -p1 -i $srcdir/embree-2.16.4-32bit-compile-flags.patch
+	patch -p2 -i $srcdir/embree-2.17.3-32bit-compile-flags.patch
 }
