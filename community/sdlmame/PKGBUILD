@@ -1,0 +1,9 @@
+# mame64 is called mame on i686 - see:
+# 4e30b15e2f0034b36a38971d2922b9dea302e6bb -> fe8a47e4eeacdb7158bf658ce83346c40ffa2c75
+
+eval "$(
+  declare -f package | \
+    sed '
+      s/ mame64 / mame /
+    '
+)"
