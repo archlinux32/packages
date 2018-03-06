@@ -1,0 +1,5 @@
+prepare() {
+  sed -i '
+    48 s/x86_64/i686/
+  ' vamp-aubio-plugins-0.5.1/wscript
+}
