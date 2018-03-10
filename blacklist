@@ -13,6 +13,7 @@ libretro-parallel-n64 # do not build, see FS32#23
 libretro-ppsspp # do not build, see FS32#23
 luxrays # does not compile on i686 - see FS#54960
 mongodb # dropped support for 32-bit in version 3.4
+nginx-mod-pagespeed # bundles a 64-bit only version of psol, doesn't build that way
 nsjail # kafel has no 32-bit Intel support, see also <a href="https://bbs.archlinux32.org/viewtopic.php?pid=795#p795">forum</a>
 opera # dropped 32-bit version in version 46.0.2597.26
 opera-ffmpeg-codecs # as opera itself is blacklisted
