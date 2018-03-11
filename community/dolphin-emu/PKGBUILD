@@ -1,6 +1,6 @@
 eval "$(
   declare -f build | \
     sed '
-      s|cmake ..|cmake .. -DENABLE_GENERIC='TRUE'|
+      s|cmake ../dolphin-emu|cmake ../dolphin-emu -DENABLE_GENERIC='TRUE'|
     '
 )"
