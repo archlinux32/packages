@@ -1,0 +1,8 @@
+source=(
+  $(
+    printf '%s\n' "${source[q]}" | \
+      sed '
+        \,^https://git.archlinux.org/archboot.git/snapshot, s/\.[0-9]\+\.tar\.xz$/.tar.xz/
+      '
+  )
+)
