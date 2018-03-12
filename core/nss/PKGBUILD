@@ -1,0 +1,11 @@
+# bring back changes of 617b84f70caf
+
+source+=(no-plt.diff)
+sha256sums+=('ea8e1b871c0f1dd29cdea1b1a2e7f47bf4713e2ae7b947ec832dba7dfcc67daa')
+
+eval "$(
+  declare -f prepare | \
+    sed '
+      /cd nss-/a patch -Np2 -i ../no-plt.diff
+    '
+)"
