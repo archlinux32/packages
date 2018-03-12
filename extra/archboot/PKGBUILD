@@ -1,3 +1,10 @@
+depends=(
+  $(
+    printf '%s\n' "${depends[@]}" | \
+      grep -v '^rfkill>\|^yp-tools>\|^eventlog>'
+  )
+)
+
 source=(
   $(
     printf '%s\n' "${source[q]}" | \
