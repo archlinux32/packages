@@ -1,2 +1,0 @@
-# libdrm depends on valgrind (transitive dependency in configure)
-makedepends+=(valgrind)

@@ -1,7 +1,0 @@
-# remove valgrind from makedepends - otherwise libdrm claims to depend on it
-makedepends=(
-  $(
-    printf '%s\n' "${makedepends[@]}" | \
-      grep -vxF 'valgrind'
-  )
-)
