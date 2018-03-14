@@ -1,4 +1,4 @@
 # bring back the i686 specific stuff
 source=("${source[@]//x86_64/i386}")
-sha256sums=('3da1568d97eec0d34291472ddb51211e88ab10d37e5f38ea94c3252efe63b7d4'
-            '4811346483eaa429baf88bf179352fd5ce06d03dcd3d0e25300f13aa08729ff0')
+sha256sums=('beb2f8660f7579dd96410db2805369cbdf1ad5156934bd0844f9a4cf3481b219'
+            '2d2fc9a70c7b067234bb7003f14f8063e7183f621cf258ce9aa3d9ea97d63305')
