@@ -1,0 +1,10 @@
+# reported upstream, see https://github.com/mtytel/helm/issues/190
+source+=('helm-0.9.0-sigemptyset-glibc-2.26.patch')
+sha512sums+=('7786c0fdf6ec0cfdb2e7344742327454e9ab82e83e43cb6492d3b6fd047f0070b8da23055d9d9df2fc325ce440b1b51ef8919fb9749cab3d6800946cebf03ab8')
+
+eval "$(
+  declare -f prepare | \
+    sed '
+      /cd/ a patch -Np1 -i "${srcdir}"/helm-0.9.0-sigemptyset-glibc-2.26.patch
+    '
+)"
