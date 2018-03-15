@@ -3,7 +3,7 @@ makedepends+=('libglvnd')
 for ((i=0; i<${#source[@]}; i++)); do
   if [ "${source[${i}]}" = "http://us.download.nvidia.com/XFree86/Linux-x86_64/${pkgver}/NVIDIA-Linux-x86_64-${pkgver}-no-compat32.run" ]; then
     source[${i}]="http://us.download.nvidia.com/XFree86/Linux-x86/${pkgver}/NVIDIA-Linux-x86-${pkgver}.run"
-    sha256sums[${i}]='1183552b46409a3c09caa172da5a296b56078d178c5ad272bed7101a40bf6b3a'
+    sha256sums[${i}]='a132a5d999ca70b6047d6babd382e27394876afc3bce7e7418c3aa3ada78dc44'
     break
   fi
 done
