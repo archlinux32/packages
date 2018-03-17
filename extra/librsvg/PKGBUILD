@@ -1,0 +1,15 @@
+# target Pentium 3 without SSE2
+
+eval "$(
+  declare -f prepare | \
+    sed '
+      /autogen.sh/ i sed -i "/cargo build/RUSTFLAGS=\"-C target-cpu=pentium3\" cargo build/g" Makefile.am
+    '
+)"
+
+eval "$(
+  declare -f build | \
+    sed '
+      s/make/make V=1/
+    '
+)"
