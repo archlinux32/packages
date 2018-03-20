@@ -1,0 +1,13 @@
+# see https://bugreports.qt.io/browse/QTBUG-35430
+# and https://lists.debian.org/debian-qt-kde/2015/10/msg00388.html
+# and https://packages.debian.org/sid/qtdeclarative5-dev
+
+source+=(Do-not-make-lack-of-SSE2-support-on-x86-32-fatal.patch)
+sha256sums+=('26120747f744571f2ead15c904fcd8d60e0c94fb538c711ae6051ab02d418e0d')
+
+eval "$(
+  declare -f prepare | \
+    sed '
+      /cd/a patch -Np1 -i ../Do-not-make-lack-of-SSE2-support-on-x86-32-fatal.patch
+    '
+)"

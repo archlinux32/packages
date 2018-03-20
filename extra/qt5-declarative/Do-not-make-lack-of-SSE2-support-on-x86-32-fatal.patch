@@ -1,0 +1,122 @@
+From 4950c366b12265f1ea390a6feb8dbbd0d850d206 Mon Sep 17 00:00:00 2001
+From: Guillem Jover <guillem@hadrons.org>
+Date: Mon, 12 Oct 2015 01:45:37 +0200
+Subject: [PATCH v2] Do not make lack of SSE2 support on x86-32 fatal
+
+When an x86-32 CPU does not have SSE2 support (which is the case for
+all AMD CPUs, and older Intel CPUs), fallback to use the interpreter,
+otherwise use the JIT engine.
+
+Even then, make the lack of SSE2 support on x86-32 fatal when trying
+to instantiate a JIT engine, which does require it.
+
+Refactor the required CPU support check into a new pair of privately
+exported functions to avoid duplicating the logic, and do so in
+functions instead of class members to avoid changing the class
+signatures.
+
+Version: 5.7.x
+Bug-Debian: https://bugs.debian.org/792594
+---
+ src/qml/jit/qv4isel_masm.cpp    |  2 ++
+ src/qml/jit/qv4isel_masm_p.h    | 18 ++++++++++++++++++
+ src/qml/jsruntime/qv4engine.cpp |  1 +
+ src/qml/qml/v8/qv8engine.cpp    |  7 -------
+ tools/qmljs/qmljs.cpp           |  7 +++----
+ 5 files changed, 24 insertions(+), 11 deletions(-)
+
+--- a/src/qml/jit/qv4isel_masm.cpp
++++ b/src/qml/jit/qv4isel_masm.cpp
+@@ -72,6 +72,8 @@ InstructionSelection<JITAssembler>::Inst
+     , compilationUnit(new CompilationUnit)
+     , qmlEngine(qmlEngine)
+ {
++    checkRequiredCpuSupport();
++
+     compilationUnit->codeRefs.resize(module->functions.size());
+     module->unitFlags |= QV4::CompiledData::Unit::ContainsMachineCode;
+ }
+--- a/src/qml/jit/qv4isel_masm_p.h
++++ b/src/qml/jit/qv4isel_masm_p.h
+@@ -60,6 +60,7 @@
+ 
+ #include <QtCore/QHash>
+ #include <QtCore/QStack>
++#include <private/qsimd_p.h>
+ #include <config.h>
+ #include <wtf/Vector.h>
+ 
+@@ -72,6 +73,23 @@ QT_BEGIN_NAMESPACE
+ namespace QV4 {
+ namespace JIT {
+ 
++Q_QML_PRIVATE_EXPORT inline bool hasRequiredCpuSupport()
++{
++#ifdef Q_PROCESSOR_X86_32
++    return qCpuHasFeature(SSE2);
++#else
++    return true;
++#endif
++}
++
++Q_QML_PRIVATE_EXPORT inline void checkRequiredCpuSupport()
++{
++#ifdef Q_PROCESSOR_X86_32
++    if (!qCpuHasFeature(SSE2))
++        qFatal("This program requires an X86 processor that supports SSE2 extension, at least a Pentium 4 or newer");
++#endif
++}
++
+ template <typename JITAssembler = Assembler<DefaultAssemblerTargetConfiguration>>
+ class Q_QML_EXPORT InstructionSelection:
+         protected IR::IRDecoder,
+--- a/src/qml/jsruntime/qv4engine.cpp
++++ b/src/qml/jsruntime/qv4engine.cpp
+@@ -159,6 +159,7 @@
+ 
+ #ifdef V4_ENABLE_JIT
+         static const bool forceMoth = !qEnvironmentVariableIsEmpty("QV4_FORCE_INTERPRETER") ||
++                                      !JIT::hasRequiredCpuSupport() ||
+                                       !OSAllocator::canAllocateExecutableMemory();
+         if (forceMoth) {
+             factory = new Moth::ISelFactory;
+--- a/src/qml/qml/v8/qv8engine.cpp
++++ b/src/qml/qml/v8/qv8engine.cpp
+@@ -64,7 +64,6 @@
+ #include <QtCore/qjsonvalue.h>
+ #include <QtCore/qdatetime.h>
+ #include <QtCore/qdatastream.h>
+-#include <private/qsimd_p.h>
+ 
+ #include <private/qv4value_p.h>
+ #include <private/qv4dateobject_p.h>
+@@ -129,12 +128,6 @@ QV8Engine::QV8Engine(QJSEngine* qq)
+     , m_xmlHttpRequestData(0)
+     , m_listModelData(0)
+ {
+-#ifdef Q_PROCESSOR_X86_32
+-    if (!qCpuHasFeature(SSE2)) {
+-        qFatal("This program requires an X86 processor that supports SSE2 extension, at least a Pentium 4 or newer");
+-    }
+-#endif
+-
+     QML_MEMORY_SCOPE_STRING("QV8Engine::QV8Engine");
+     qMetaTypeId<QJSValue>();
+     qMetaTypeId<QList<int> >();
+--- a/tools/qmljs/qmljs.cpp
++++ b/tools/qmljs/qmljs.cpp
+@@ -92,11 +92,10 @@ int main(int argc, char *argv[])
+     enum {
+         use_masm,
+         use_moth
+-    } mode;
++    } mode = use_moth;
+ #ifdef V4_ENABLE_JIT
+-    mode = use_masm;
+-#else
+-    mode = use_moth;
++    if (QV4::JIT::hasRequiredCpuSupport())
++        mode = use_masm;
+ #endif
+ 
+     bool runAsQml = false;
