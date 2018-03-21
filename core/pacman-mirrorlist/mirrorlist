@@ -6,6 +6,9 @@
 ## Canada
 #Server = http://arch32.mirrors.simplysam.us/$arch/$repo
 
+## Belarus
+#Server = http://mirror.datacenter.by/pub/archlinux32/$arch/$repo
+
 ## France
 ##Server = https://archlinux32.mirror.roelf.org/$arch/$repo
 
