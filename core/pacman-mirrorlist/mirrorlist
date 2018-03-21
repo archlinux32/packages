@@ -29,6 +29,10 @@
 ## Mexico
 #Server = https://mex.mirror.archlinux32.org/$arch/$repo
 
+## Russia
+#Server = http://mirror.yandex.ru/archlinux32/$arch/$repo
+#Server = https://mirror.yandex.ru/archlinux32/$arch/$repo
+
 ## Singapore
 #Server = https://sgp.mirror.archlinux32.org/$arch/$repo
 
