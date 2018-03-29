@@ -4,4 +4,4 @@ for ((i=${#source[@]}; i>0; i--)); do
   fi
 done
 source[${i}]="http://www.bay12games.com/dwarves/df_${_pkgver}_linux32.tar.bz2"
-sha256sums[${i}]='347736edcd10a2506a29ea2acadaa27c2ad019f13f453830f141006d8ea72806'
+sha256sums[${i}]='ab2316bf55e7995ff486eec65d01a3dace17f7e57547898c3a131a5a8a74bd97'
