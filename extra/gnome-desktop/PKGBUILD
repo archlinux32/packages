@@ -1,0 +1,1 @@
+eval "$(declare -f build | sed 's|./configure|./configure --disable-Werror|')"
