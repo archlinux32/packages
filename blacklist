@@ -20,6 +20,7 @@ opera-ffmpeg-codecs # as opera itself is blacklisted
 ospray # "Your Embree build needs to support at least one ISA >= SSE4.1!"
 ovmf # "ERROR: This package must be built under the x86_64 architecture.", UEFI for VMS, of little use anyway with 32-bit machines
 parallel-netcdf-openmpi # requires MPI_Offset >= 8, which is not (yet?) possible on 32 bits - see https://github.com/open-mpi/ompi/issues/3195
+parity # "32-bit targets are not supported at the moment, You can use '32bit_opt_in' feature. See https://github.com/pepyakin/wasmi/issues/43
 python-pytorch # Gloo can only be built on 64-bit systems
 qcef # contains CEF binaries (not current ones) for 64-bit and MIPS only, no 32-bit Intel. Discuss with the authors if you need it.
 reflector # supports Archlinux mirrors and not Archlinux32 mirrors (yet)
