@@ -1,0 +1,12 @@
+# see FS#56510 
+# patch from AlpineLinux, see: https://git.alpinelinux.org/cgit/aports/tree/main/lynx/ncurses.patch
+
+source+=(alpine-lynx-2.8.8-ncurses.patch)
+sha256sums+=('06d1a968cd7eed0711683ed055c67118f52ef7ea22fcb7995447d3d7a9297f1d')
+
+eval "$(
+  declare -f prepare | \
+    sed '
+      /patch/a patch -Np1 -i ../alpine-lynx-2.8.8-ncurses.patch
+    '
+)"
