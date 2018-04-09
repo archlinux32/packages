@@ -1,9 +1,15 @@
 # Maintainer: Erich Eckner <deep42thought@archlinux32.org>
-pkgname=archlinux32-keyring pkgver=20180104 pkgrel=1 pkgdesc='Arch Linux 32 PGP keyring' arch=('any') 
-url='http://archlinux32.org' license=('GPL') install="${pkgname}.install" 
-conflicts=('archlinux32-keyring-transition') replaces=('archlinux32-keyring-transition') 
-source=("https://github.com/archlinux32/$pkgname/archive/v$pkgver.tar.gz") 
-sha512sums=('1b3dd7bfe2b6e5cc0a0fbea23345822208b0e5fb4652ac95893d53bd9ec1b9ee5f021c12e9d13344a1ebd2354bbc3e5d58b97c1d89a2380f8b9bc90ae75e4fca')
+pkgname=archlinux32-keyring
+pkgver=20180409
+pkgrel=1
+pkgdesc='Arch Linux 32 PGP keyring'
+arch=('any')
+url='http://archlinux32.org'
+license=('GPL')
+install="${pkgname}.install"
+conflicts=('archlinux32-keyring-transition') replaces=('archlinux32-keyring-transition')
+source=("https://github.com/archlinux32/$pkgname/archive/v$pkgver.tar.gz")
+sha512sums=('00a7a739baf44479947d54f2b339e3a1d7c66bd89ffb876989e78a9c04eed40229b427daf81cc7102d2d567edaa723eab2e38200f777544e129fc763d963bab1')
 
 package() {
     cd "${srcdir}/${pkgname}-"* # ${pkgver}"
