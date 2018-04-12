@@ -6,5 +6,7 @@ eval "$(
   declare -f build | \
     sed '
       s|make build|make build-nocheck|
+      s|--enable-ext-wiki-publisher|--disable-ext-wiki-publisher|
+      s|--enable-ext-nlpsolver|--disable-ext-nlpsolver|
     '
 )"
