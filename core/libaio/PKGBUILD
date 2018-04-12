@@ -1,0 +1,9 @@
+# see also FS32#30
+# compat-0_1.c:(.text+0xaf): undefined reference to `__stack_chk_fail_local'
+eval "$(
+  declare -f build | \
+    sed '
+      s/\(CFLAGS=.*\)/#\1/
+      s@make$@CFLAGS="-march=${CARCH/_/-} -mtune=generic -O2 -pipe -fno-stack-protector" make@
+    '
+)"
