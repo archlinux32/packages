@@ -1,1 +1,14 @@
-eval "$(declare -f build | sed 's|./configure|./configure --disable-Werror|')"
+eval "$(
+  declare -f build | \
+    sed '
+      s|./configure|./configure --disable-Werror|
+    '
+)"
+eval "$(
+  declare -f prepare | \
+    sed '
+      3 a patch -Np1 -i ../lib64.diff
+    '
+)"
+source+=('lib64.diff')
+sha256sums+=('a1ba9b12d71afea5dd713cdbc0c3297ee3df38f5004f5ee02dd2d90adfcffc5b')

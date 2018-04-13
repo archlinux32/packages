@@ -1,0 +1,13 @@
+diff --git a/libgnome-desktop/gnome-desktop-thumbnail-script.c 
+b/libgnome-desktop/gnome-desktop-thumbnail-script.c
+index 14e2fed3..dac7b210 100644
+--- a/libgnome-desktop/gnome-desktop-thumbnail-script.c
++++ b/libgnome-desktop/gnome-desktop-thumbnail-script.c
+@@ -517,7 +517,6 @@ add_bwrap (GPtrArray   *array,
+ 	    "bwrap",
+ 	    "--ro-bind", "/usr", "/usr",
+ 	    "--ro-bind", "/lib", "/lib",
+-	    "--ro-bind", "/lib64", "/lib64",
+ 	    "--proc", "/proc",
+ 	    "--dev", "/dev",
+ 	    "--symlink", "usr/bin", "/bin",
