@@ -1,0 +1,6 @@
+prepare() {
+  find "${pkgname}-${pkgver}" \
+    -exec sed -i '
+      s/Invalid resolution information (-1)\./Invalid spline object./g
+    ' {} \;
+}
