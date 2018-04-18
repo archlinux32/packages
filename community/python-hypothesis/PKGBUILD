@@ -2,7 +2,7 @@ eval "$(
   declare -f prepare | \
     sed '
       2 a \
-  find hypothesis-python-$pkgver/hypothesis-python/tests -type f -name '"'"'*.py'"'"' \\\
+  find hypothesis-$pkgver/hypothesis-python/tests -type f -name '"'"'*.py'"'"' \\\
     -exec sed -i '"'"'/^\\s*@settings(suppress_health_check=/s/HealthCheck\\.too_slow/\\0, HealthCheck.hung_test/g'"'"' {} \\;
     '
 )"
