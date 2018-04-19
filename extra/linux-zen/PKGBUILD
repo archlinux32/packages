@@ -1,8 +1,8 @@
-# git revision a958023be78776343cd4392220c2a1ebdf45f63d
+# git revision 78d6fdd5b3e0fa0e8748fac326d1015697038e90
 
 # fail if upstream's .config changes
-if [ "${sha256sums[6]}" = 'c81fd0b2d1dab295ee0e61c6c381286658223d9a128636c68f0f0ecdd28d7044' ]; then
-  sha256sums[6]='8fec6f19f2e72084c1375da001863639a7bf0509f9e297694e89946c75e222a5'
+if [ "${sha256sums[6]}" = 'b1979253d648498c420f640621eaf2e173e020d8298930d7835f089daf442994' ]; then
+  sha256sums[6]='2d248f7085895857a034e613eb54f2f324defc2751bc19b8fcbaf7e42e343a82'
 fi
 
 eval "$(
