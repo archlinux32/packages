@@ -1,0 +1,9 @@
+# See: https://github.com/libgit2/libgit2/pull/4631
+
+source+=('libgit2-ssp-offset64-stat-buf.patch')
+sha1sums+=('378a2c3eaef1957145aa58f51f75a07c634f77d7')
+
+prepare() {
+  cd $pkgname-$pkgver
+  patch -Np1 -i "$srcdir/libgit2-ssp-offset64-stat-buf.patch"
+}
