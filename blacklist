@@ -1,3 +1,4 @@
+bazel # they seem to have dropped 32-bit, see mapped_file_posix.inc: "// The implementation is 64-bit Linux or OSX specific."
 ceph # fails fatally in check() - see <a href="https://bugs.archlinux32.org/index.php?do=details&task_id=21">FS32#21</a>
 cuda # cuda 9.0 is 64-bit only
 delve # currently no 32-bit support, see <a href="https://github.com/derekparker/delve/issues/20">upstream</a>
