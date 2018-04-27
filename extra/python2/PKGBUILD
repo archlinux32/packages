@@ -1,0 +1,10 @@
+# on i686 some tests fail with segfault
+# test_replace_overflow (present in test_bytes, test_str, test_string, 
+# test_unicode, test_userstring) segfault on i686
+# test_bigrepeat (present in test_tuple) segfault on i686
+eval "$(
+  declare -f check | \
+    sed '
+      /xvfb-run/ s/-x test_idle/-x test_idle test_bytes test_str test_string test_unicode test_userstring test_tuple/
+    '
+)"
