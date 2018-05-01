@@ -1,0 +1,26 @@
+diff -rauN qemu-2.11.1/configure qemu-2.11.1-glibc-2.27-mman_create-patch/configure
+--- qemu-2.11.1/configure	2018-02-14 22:53:22.000000000 +0100
++++ qemu-2.11.1-glibc-2.27-mman_create-patch/configure	2018-05-01 08:12:01.052175589 +0200
+@@ -3920,7 +3920,7 @@
+ # check if memfd is supported
+ memfd=no
+ cat > $TMPC << EOF
+-#include <sys/memfd.h>
++#include <sys/mman.h>
+ 
+ int main(void)
+ {
+diff -rauN qemu-2.11.1/util/memfd.c qemu-2.11.1-glibc-2.27-mman_create-patch/util/memfd.c
+--- qemu-2.11.1/util/memfd.c	2018-02-14 22:53:23.000000000 +0100
++++ qemu-2.11.1-glibc-2.27-mman_create-patch/util/memfd.c	2018-05-01 08:13:37.393396612 +0200
+@@ -31,9 +31,7 @@
+ 
+ #include "qemu/memfd.h"
+ 
+-#ifdef CONFIG_MEMFD
+-#include <sys/memfd.h>
+-#elif defined CONFIG_LINUX
++#if defined CONFIG_LINUX && !defined CONFIG_MEMFD
+ #include <sys/syscall.h>
+ #include <asm/unistd.h>
+ 

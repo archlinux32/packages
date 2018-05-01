@@ -13,3 +13,14 @@ eval "$(
       s@rm qemu/block-{iscsi,rbd,gluster}.so@rm qemu/block-{iscsi,gluster}.so@
     '
 )"
+
+# see https://git.qemu.org/?p=qemu.git;a=commit;h=75e5b70e6b5dcc4f2219992d7cffa462aa406af0
+source+=('qemu-2.11.1-glibc-2.27-mman_create.patch')
+sha256sums+=('5653219a0d4ff8312e7bc4a5f6202ae637607e114e68d4c9fcf8492ab23706bb')
+
+eval "$(
+  declare -f prepare | \
+    sed '
+      /allow_elf64.patch/a patch -Np1 -i ../qemu-2.11.1-glibc-2.27-mman_create.patch
+    '
+)"
