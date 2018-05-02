@@ -4,3 +4,9 @@ checkdepends=(
       grep -vxF 'mongodb'
   )
 )
+eval "$(
+  declare -f check | \
+    sed '
+      s/ pifpaf run mongodb \([^-]\S* \+\|--\S\+ \+\)*--//
+    '
+)"
