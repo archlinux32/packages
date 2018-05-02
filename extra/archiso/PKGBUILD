@@ -1,12 +1,12 @@
 # we override almost everything
 
-pkgver=33
+pkgver=34
 pkgrel=1
 license=('GPL')
 url='https://github.com/archlinux32/archiso32'
 source=("$pkgname-$pkgver.tar.gz::https://github.com/archlinux32/${pkgname}32/archive/i686-v${pkgver}.tar.gz")
 unset sha256sums
-sha512sums=('7d882d813f952bc4ffa060e3f429e7abf9b5d28db61c18efee605f2819ec1fdf6b7d5fa8a02da61b706195e7769218ea207fb99bf3a97e4f66375d9ada5f36ac')
+sha512sums=('8337aac52542310b8e1f14e6f5e11e8973b4fd778d51eeb7bb962c7817c9399a0a23097c18f69e5a4a1f242a6daf8fdd7d65c75bfc2e0003ca922e2839f28e14')
 unset validpgpkeys
 
 eval "$(
