@@ -1,0 +1,6 @@
+checkdepends=(
+  $(
+    printf '%s\n' "${checkdepends[@]}" | \
+      grep -vxF 'mongodb'
+  )
+)
