@@ -1,0 +1,12 @@
+# https://github.com/gnunn1/tilix/issues/1392
+
+source+=('tilix-1.7.9-32bit-glong-getCursorPosition.patch')
+sha256sums+=('3217d9e0d84a2d4c3ce7d066e99fda23bf814f395a18881caef5245e51276824')
+
+eval "$(
+  declare -f prepare | \
+    sed '
+      3 a patch -Np1 -i "${srcdir}"/tilix-1.7.9-32bit-glong-getCursorPosition.patch
+    '
+)"
+

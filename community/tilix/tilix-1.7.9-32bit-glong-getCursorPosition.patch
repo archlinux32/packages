@@ -1,0 +1,12 @@
+diff -rauN tilix-1.7.9/source/gx/tilix/terminal/terminal.d tilix-1.7.9-32bit-glong-getCursorPosition-patch/source/gx/tilix/terminal/terminal.d
+--- tilix-1.7.9/source/gx/tilix/terminal/terminal.d	2018-04-29 01:49:55.000000000 +0200
++++ tilix-1.7.9-32bit-glong-getCursorPosition-patch/source/gx/tilix/terminal/terminal.d	2018-05-03 14:18:32.786498582 +0200
+@@ -1042,7 +1042,7 @@
+             if (vte is null) return false;
+ 
+             if (event.key.keyval == GdkKeysyms.GDK_Return && checkVTEFeature(TerminalFeature.EVENT_SCREEN_CHANGED) && currentScreen == TerminalScreen.NORMAL) {
+-                long row, column;
++                glong row, column;
+                 vte.getCursorPosition(column, row);
+                 addPromptPosition(row);
+                 tracef("Added prompt position %d", row);
