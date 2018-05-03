@@ -1,15 +1,6 @@
-diff --git a/libnids-1.24-inline.patch b/libnids-1.24-inline.patch
-new file mode 100644
-index 0000000..e3a6cce
---- /dev/null
-+++ b/libnids-1.24-inline.patch
-@@ -0,0 +1,40 @@
-Patch by Robert Scheck <robert@fedoraproject.org> for libnids <= 1.24 which
-avoids making the functions ip_fast_csum, ip_compute_csum, my_tcp_check and
-my_udp_check inline, see https://github.com/aol/moloch/issues/440 as well.
-
---- libnids-1.24/src/checksum.c		2010-02-26 11:58:41.000000000 +0100
-+++ libnids-1.24/src/checksum.c.inline	2016-02-09 14:08:38.000000000 +0100
+diff -rauN libnids-1.24/src/checksum.c libnids-1.24-inline-patch/src/checksum.c
+--- libnids-1.24/src/checksum.c	2010-02-26 11:58:41.000000000 +0100
++++ libnids-1.24-inline-patch/src/checksum.c	2018-05-03 07:53:10.552320792 +0200
 @@ -120,7 +120,7 @@
    By Jorge Cwik <jorge@laser.satlink.net>, adapted for linux by Arnt
    Gulbrandsen.
@@ -19,6 +10,15 @@ my_udp_check inline, see https://github.com/aol/moloch/issues/440 as well.
  {
    u_int sum;
    if (dontchksum(((struct ip*)iph)->ip_src.s_addr))
+@@ -172,7 +172,7 @@
+   computes the checksum of the TCP/UDP pseudo-header
+   returns a 16-bit checksum, already complemented
+ */
+-static inline u_short
++static u_short
+ csum_tcpudp_magic(u_int saddr, u_int daddr, u_short len,
+ 		  u_short proto, u_int sum)
+ {
 @@ -191,13 +191,13 @@
    this routine is used for miscellaneous IP-like checksums, mainly in
    icmp.c
