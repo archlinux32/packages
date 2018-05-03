@@ -1,0 +1,5 @@
+# seccomp doesn't add rules for 64-bit filesystem function on 32-bit
+# systems (e.g. fstat64)
+
+source+=('file-5.33-seccomp-32bit.patch')
+md5sums+=('b472f29fefe0f60607eae814ff163e551')
