@@ -2,4 +2,4 @@
 # systems (e.g. fstat64)
 
 source+=('file-5.33-seccomp-32bit.patch')
-md5sums+=('472f29fefe0f60607eae814ff163e551')
+md5sums+=('5e0c3072ad745b55c8560425e6bb904c')
