@@ -3,7 +3,7 @@
 # see https://src.fedoraproject.org/cgit/rpms/libnids.git/commit/?id=ecafb692f20e0acad555f66c3cc1646997a82dae
 
 source+=('libnids-1.24-inline.patch')
-sha256sums+=('0c2b0426a6bab56641f3579dca266ea8d38e1834230154a1be9bbe2f66e2df5e')
+sha256sums+=('be5a0e9987f7c1bdae5480f8463ba8b0011c4c000750e8e22136fe81b6287b98')
 
 prepare() {
   cd $pkgname-$pkgver
