@@ -1,0 +1,11 @@
+# https://github.com/tqdm/tqdm/issues/538
+
+source+=('tqdm-4.22.0-sleep-test-workaround.patch')
+sha512sums+=('ac09e7578ad380f55f9371a067061bd1f23be6a799ec82c3abf2471d7d780bd435b423d0ab1f989cf7039b467d5adfa38e324cb887b0b27f52218fa3753956fa')
+
+eval "$(
+  declare -f prepare | \
+    sed '
+      /cp/ i pushd ${srcdir}/tqdm-$pkgver && patch -Np1 -i "${srcdir}"/tqdm-4.22.0-sleep-test-workaround.patch && popd
+    '
+)"
