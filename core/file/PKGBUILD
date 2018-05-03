@@ -1,5 +1,12 @@
-# seccomp doesn't add rules for 64-bit filesystem function on 32-bit
-# systems (e.g. fstat64)
+# file doesn't add seccomp rules for 64-bit filesystem function on 32-bit
+# systems (e.g. fstat64), in allmost all functions of file
+# various sycalls like fork, pipe, wait4 have no ALLOW_RULE, somehow
+# works on 64-bit, not on 32-bit. (-z option)
+# Hence: disabling seccomp support completly!
 
-source+=('file-5.33-seccomp-32bit.patch')
-md5sums+=('5e0c3072ad745b55c8560425e6bb904c')
+eval "$(
+  declare -f build | \
+    sed '
+      s/configure/configure --disable-libseccomp/
+    '
+)"
