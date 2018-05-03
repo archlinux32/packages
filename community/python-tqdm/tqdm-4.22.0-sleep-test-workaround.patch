@@ -1,0 +1,12 @@
+diff -rauN tqdm-4.22.0/tqdm/tests/tests_synchronisation.py tqdm-4.22.0-sleep-test-workaround-patch/tqdm/tests/tests_synchronisation.py
+--- tqdm-4.22.0/tqdm/tests/tests_synchronisation.py	2018-04-12 01:27:25.000000000 +0200
++++ tqdm-4.22.0-sleep-test-workaround-patch/tqdm/tests/tests_synchronisation.py	2018-05-03 08:42:28.204036417 +0200
+@@ -155,7 +155,7 @@
+                 timeend = timer.time()
+                 while not (t1.monitor.woken >= timeend and t1.miniters == 1):
+                     timer.sleep(1)
+-                    sleep(0.000001)
++                    sleep(0.001)
+                 assert t1.miniters == 1  # check that monitor corrected miniters
+                 assert t2.miniters == 500  # check that t2 was not adjusted
+ 
