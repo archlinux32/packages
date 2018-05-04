@@ -1,20 +1,4 @@
-# remove cross-compiling-prefixes
-
-eval "$(
-  sed '
-    s/lib32-//g
-    /^# remove cross-compiling-prefixes$/q
-  ' "${BASH_SOURCE[0]}"
-)"
-
-# and gcc-multilib
-
-makedepends=($(
-  printf '%s\n' "${makedepends[@]}" | \
-    sed '/^gcc-multilib/d'
-))
-
-# and these guys, too
+# remove wow64
 
 provides=(${provides[@]/wine-wow64*/})
 conflicts=(${conflicts[@]/wine-wow64*/})
