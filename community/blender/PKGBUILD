@@ -1,0 +1,3 @@
+makedepends=(
+  ${makedepends[@]/cuda/}
+)
