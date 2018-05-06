@@ -15,6 +15,6 @@ sha512sums=('e1bb190ea3895ecff789eeb25b35758704d2528f46cf2861c7cd89250eca9396e22
 validpgpkeys=('5FDCA472AB93292BC678FD59255A76DB9A12601A') # Erich Eckner (just to sign arch packages) <arch@eckner.net>
 
 package() {
-    cd "${srcdir}/${_pkgname}-"* # ${pkgver}"
+    cd "${srcdir}/${_pkgname}-v${pkgver}"
     make PREFIX=/usr DESTDIR=${pkgdir} install
 }
