@@ -4,15 +4,17 @@ pkgver=20180411
 pkgrel=1
 pkgdesc='Arch Linux 32 PGP keyring'
 arch=('any')
-url='http://archlinux32.org'
+url='https://archlinux32.org'
 license=('GPL')
-install="${pkgname}.install"
 conflicts=('archlinux32-keyring-transition')
 replaces=('archlinux32-keyring-transition')
-source=("https://github.com/archlinux32/$pkgname/archive/v$pkgver.tar.gz")
-sha512sums=('ed178d1d3bf8f968d16dadd037673f3dd46996001d6b62aca84ef7ba0197f201dc11db9b545b90f498537b12ce3cef31a72d1fc79f286cbd82408be5f64759b7')
+install="${pkgname}.install"
+source=("https://github.com/archlinux32/${pkgname}/releases/download/v${pkgver}/${pkgname}-v${pkgver}.tar.xz"{,.sig})
+sha512sums=('e1bb190ea3895ecff789eeb25b35758704d2528f46cf2861c7cd89250eca9396e22d9be2bf42dd3fda2dba0c858216eca51d93d7a5ce7e84691a3965fa9aa63e'
+            'SKIP')
+validpgpkeys=('5FDCA472AB93292BC678FD59255A76DB9A12601A') # Erich Eckner (just to sign arch packages) <arch@eckner.net>
 
 package() {
-    cd "${srcdir}/${pkgname}-"* # ${pkgver}"
+    cd "${srcdir}/${pkgname}-v${pkgver}"
     make PREFIX=/usr DESTDIR=${pkgdir} install
 }
