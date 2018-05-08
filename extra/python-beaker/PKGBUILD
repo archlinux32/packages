@@ -5,6 +5,10 @@ checkdepends=(
   )
 )
 eval "$(
+  declare -f prepare | \
+    sed '
+      3 i rm "$srcdir/beaker-$pkgver/tests/test_managers/test_ext_mongodb.py"
+    '
   declare -f check | \
     sed '
       s/ pifpaf run mongodb \([^-]\S* \+\|--\S\+ \+\)*--//
