@@ -1,0 +1,18 @@
+--- a/os-release	2018-01-05 20:17:15.000000000 +0100
++++ b/os-release	2018-05-08 13:53:44.625827911 +0200
+@@ -1,8 +1,8 @@
+-NAME="Arch Linux"
+-PRETTY_NAME="Arch Linux"
+-ID=arch
+-ID_LIKE=archlinux
++NAME="Arch Linux 32"
++PRETTY_NAME="Arch Linux 32"
++ID=arch32
++ID_LIKE="arch archlinux"
+ ANSI_COLOR="0;36"
+-HOME_URL="https://www.archlinux.org/"
+-SUPPORT_URL="https://bbs.archlinux.org/"
+-BUG_REPORT_URL="https://bugs.archlinux.org/"
++HOME_URL="https://www.archlinux32.org/"
++SUPPORT_URL="https://bbs.archlinux32.org/"
++BUG_REPORT_URL="https://bugs.archlinux32.org/"

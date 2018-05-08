@@ -1,0 +1,6 @@
+source+=('os-release.patch')
+md5sums+=('6ec952a2bbb95ea3d73e0afcf5703c49')
+
+prepare() {
+  patch -p1 -i "$srcdir/os-release.patch"
+}
