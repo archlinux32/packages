@@ -1,0 +1,6 @@
+eval "$(
+  declare -f package | \
+    sed '
+      s/mame64/mame/
+    '
+)"
