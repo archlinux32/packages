@@ -1,0 +1,22 @@
+diff -rauN binutils-2.30/bfd/elf32-hppa.c binutils-2.30-elf32_hppa_static_pie-patch/bfd/elf32-hppa.c
+--- binutils-2.30/bfd/elf32-hppa.c	2018-01-13 14:31:15.000000000 +0100
++++ binutils-2.30-elf32_hppa_static_pie-patch/bfd/elf32-hppa.c	2018-05-12 07:50:42.001547947 +0200
+@@ -612,6 +612,9 @@
+       return hppa_stub_import;
+     }
+ 
++  if (destination == (bfd_vma) -1)
++    return hppa_stub_none;
++    
+   /* Determine where the call point is.  */
+   location = (input_sec->output_offset
+ 	      + input_sec->output_section->vma
+@@ -2842,7 +2845,7 @@
+ 		     section.  */
+ 		  sym_sec = NULL;
+ 		  sym_value = 0;
+-		  destination = 0;
++		  destination = -1;
+ 		  hh = NULL;
+ 		  if (r_indx < symtab_hdr->sh_info)
+ 		    {
