@@ -4,16 +4,3 @@ eval "$(
       s/--enable/--enable-64-bit-bfd \0/
     '
 )"
-
-# see https://sourceware.org/bugzilla/show_bug.cgi?id=22537
-# linking segfault in glibc
-
-source+=(elf32_hppa_static_pie.patch)
-md5sums+=('68e3ce93b66ddec6c36b5146df1ed713')
-
-eval "$(
-  declare -f prepare | \
-    sed '
-      /}/i patch -p1 -i "$srcdir/elf32_hppa_static_pie.patch"
-    '
-)"
