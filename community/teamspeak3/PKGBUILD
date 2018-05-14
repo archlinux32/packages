@@ -1,6 +1,6 @@
 source_i686=("http://teamspeak.gameserver.gamed.de/ts3/releases/${pkgver}/TeamSpeak3-Client-linux_x86-${pkgver}.run")
 
-sha512sums_i686=('b6fa5a9bc48cc71834b12b39f8746085419359875d00a07c238938e00c7bd837e6eb0da756c09593536a7036f5b2bc2ac43eb3c6a33bf5e797c38ff93bb5a7b8')
+sha512sums_i686=('235581f29285feb0b940a6e968a7fe2afe22929b3a58f4b555d14c700183d0056022825846a0482c6c1693188dcf9f8ca95a725f328a9614d21b6cee774e5cc6')
 
 eval "$(
   declare -f prepare | \
