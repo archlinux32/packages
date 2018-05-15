@@ -1,6 +1,5 @@
 _arch='x86'
-_pkg="${_pkg%-no-compat32}"
-_pkg="${_pkg/x86_64/x86}"
+_pkg="NVIDIA-Linux-x86-${pkgver}"
 
 for ((i=${#source[@]}; i>0; i--)); do
   if [ "${source[${i}]}" = "http://us.download.nvidia.com/XFree86/Linux-x86_64/${pkgver}/NVIDIA-Linux-x86_64-${pkgver}-no-compat32.run" ]; then
