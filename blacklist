@@ -4,7 +4,6 @@ cuda # cuda 9.0 is 64-bit only
 delve # currently no 32-bit support, see <a href="https://github.com/derekparker/delve/issues/20">upstream</a>
 dmd # fails to build, <a href="https://issues.dlang.org/show_bug.cgi?id=17833">upstream</a> is unresponsive, see <a href="https://bbs.archlinux32.org/viewtopic.php?pid=492#p492">forum</a>
 dotnet-core # not available for 32-bit on linux, see <a href="https://github.com/dotnet/core/blob/master/release-notes/download-archives/2.0.5-download.md">here</a>
-fox-devel # fails on non 64-bit Intel, blacklisting for now, see FS32#13
 linux-hardened # not <a href="https://mirror.archlinux32.org/irc-logs/%23archlinux-ports/2017-06-28.html#04:04:01">really useful</a> on i686 + hard to maintain
 libretro-citra # do not build, see FS32#23
 libretro-mupen64plus # do not build, see FS32#23
