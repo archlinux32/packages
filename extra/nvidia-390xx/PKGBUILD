@@ -1,0 +1,9 @@
+for ((i=${#source[@]}; i>0; i--)); do
+  if [ "${source[${i}]}" = "http://us.download.nvidia.com/XFree86/Linux-x86_64/${pkgver}/NVIDIA-Linux-x86_64-${pkgver}-no-compat32.run" ]; then
+    break;
+  fi
+done
+
+source[${i}]="http://us.download.nvidia.com/XFree86/Linux-x86/${pkgver}/NVIDIA-Linux-x86-${pkgver}.run"
+sha256sums[${i}]='5115894ebb9d5d4c75c11e73a79093b7687328ebcf85d1de81a0edf41d14d6f8'
+_pkg="NVIDIA-Linux-x86-${pkgver}"
