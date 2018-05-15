@@ -1,8 +1,8 @@
-# upstream git: 78d6fdd5b3e0fa0e8748fac326d1015697038e90
+# upstream git: 652f9983b52dcf82f4e1c9e8159b8c0e401ab4ca
 
 # fail if upstream's .config changes
-if [ "${sha256sums[4]}" = '627aa44c65d7297b00a8a7045d606d33b6a0b982c02331a101b94d38d348082a' ]; then
-  sha256sums[4]='6ebfe64f823f9405df057e6dddf2a4a2be4afd117dc842ebaefa4984bcaaf4f7'
+if [ "${sha256sums[4]}" = '8566a49997faf3f8678440c52578a7a0ee901e598d3b67d3bee3799fb92e8f86'' ]; then
+  sha256sums[4]='a5cc94af0e84234d6bbde9704f11e5759e5a83f3901384638c534e27cf4b660e'
 fi
 
 eval "$(
