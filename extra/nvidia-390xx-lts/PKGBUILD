@@ -7,3 +7,10 @@ done
 source[${i}]="http://us.download.nvidia.com/XFree86/Linux-x86/${pkgver}/NVIDIA-Linux-x86-${pkgver}.run"
 sha512sums[${i}]='9d80616abbf1f95c89bb3e6bda864708adc887a62ccdf8865e956c305bb013b0e54ffb3f495805363ee60a9115ab5fb38adf1534750a6afb69a457a4d034daeb'
 _pkg="NVIDIA-Linux-x86-${pkgver}"
+
+eval "$(
+  declare -f package_nvidia-390xx-lts | \
+    sed '
+      s/,-uvm//
+    '
+)"
