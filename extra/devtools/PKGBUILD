@@ -6,7 +6,7 @@ pkgdesc='Tools for Arch Linux 32 package maintainers'
 license=('GPL')
 url='https://github.com/archlinux32/devtools32/'
 source=(
-  "https://github.com/archlinux32/$pkgname/releases/download/v$pkgver/$pkgname-v$pkgver.tar.xz"{,.sig}
+  "https://github.com/archlinux32/${pkgname}32/releases/download/v$pkgver/${pkgname}32-v$pkgver.tar.xz"{,.sig}
 )
 sha512sums=(
   '01f2142679851f782da53a8c23cd8b750eff4481f933edd115d560406461f401a7dcfec09a483b8732a293293f4332c6ca8db9b047c3351793969082c1ebf2a1'
