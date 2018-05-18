@@ -1,3 +1,5 @@
+makedepends=(${makedepends[@]/cuda//})
+
 eval "$(
   declare -f build | \
     sed '
