@@ -19,6 +19,8 @@ unset md5sums
 eval "$(
   declare -f prepare build check package | \
     sed '
-      s/\${pkgname}/\032/
+      s/\${pkgname}/\032/g
+      s/\${pkgver}/v\0/g
+      /^\s*patch .*add-etc-shadow-entry-for-builduser\.patch$/d
     '
 )"
