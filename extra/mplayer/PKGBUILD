@@ -4,6 +4,6 @@ sha512sums+=('2f93d29f1d817a64104cad7153988583443932e6bb6d147747a1af5c7a76d24da0
 eval "$(
   declare -f prepare | \
     sed '
-      /patch/a patch -Np1 -i ../mplayer-38101-sigcontext.patch
+      /revert-icl-fixes.patch/a patch -Np1 -i ../mplayer-38101-sigcontext.patch
     '
 )"
