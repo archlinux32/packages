@@ -4,3 +4,10 @@ eval "$(
       s|export CC_OPT_FLAGS="-march=x86-64"|export CC_OPT_FLAGS="-march=i686"|
     '
 )"
+
+makedepends=(
+  $(
+    printf '%s\n' "${makedepends[@]}" | \
+      sed 's/cuda//' | sed 's/cudnn//'
+  )
+)
