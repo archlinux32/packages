@@ -8,5 +8,5 @@ for ((i=${#source[@]}; i>0; i--)); do
   fi
 done
 source[${i}]="http://us.download.nvidia.com/XFree86/Linux-x86/${pkgver}/NVIDIA-Linux-x86-${pkgver}.run"
-sha512sums[${i}]='9d80616abbf1f95c89bb3e6bda864708adc887a62ccdf8865e956c305bb013b0e54ffb3f495805363ee60a9115ab5fb38adf1534750a6afb69a457a4d034daeb'
+sha512sums[${i}]='14ba06303c28715032a9efe30010b39a5b0a8f40e3e0abc86ddfc6cb4d686ce4bc2db8bfc2bb3d7a5f4de9648178d2fd54b966277900d95bd20dab8dec487385'
 
