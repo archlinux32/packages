@@ -13,8 +13,9 @@ luxrays # does not compile on i686 - see FS#54960
 mongodb # dropped support for 32-bit in version 3.4
 nginx-mod-pagespeed # bundles a 64-bit only version of psol, doesn't build that way
 nsjail # kafel has no 32-bit Intel support, see also <a href="https://bbs.archlinux32.org/viewtopic.php?pid=795#p795">forum</a>
-nvidia-lts # dropped support after release 390: https://www.phoronix.com/scan.php?page=news_item&px=32-bit-NVIDIA-Drop-Dropping
-nvidia-utils # see nvidia-lts
+nvidia # dropped support after release 390: https://www.phoronix.com/scan.php?page=news_item&px=32-bit-NVIDIA-Drop-Dropping
+nvidia-lts # see nvidia
+nvidia-utils # see nvidia
 opera # dropped 32-bit version in version 46.0.2597.26
 opera-ffmpeg-codecs # as opera itself is blacklisted
 ospray # "Your Embree build needs to support at least one ISA >= SSE4.1!"
