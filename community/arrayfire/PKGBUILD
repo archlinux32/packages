@@ -1,4 +1,4 @@
-makedepends=(${makedepends[@]/cuda//})
+makedepends=(${makedepends[@]//cuda/})
 
 eval "$(
   declare -f build | \
