@@ -1,8 +1,0 @@
-# mongodb is not available for i686
-checkdepends=("${checkdepends[@]/mongodb/}")
-
-# _this_ check function only prints a warning on failing tests - this will not be seen by the build slave & master anyway
-if [ "$(declare -f check | sha512sum | cut -d' ' -f1)" = '87bfbc049fd94802f6fceaff393fa210f1679dba86d1a572a523b13eed5afa0d378695348194f5eb4d4a7629a7ff4cb5da0a763b858fbfe62813ee58f903aceb' ]; then
-  unset checkdepends
-  unset check
-fi
