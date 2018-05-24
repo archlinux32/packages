@@ -1,0 +1,10 @@
+# Tests download a 64-bit Qt5 Python package from https://files.pythonhosted.org
+# (see https://github.com/subdownloader/subdownloader/issues/30)
+# => disabling all tests for now
+
+eval "$(
+  declare -f check | \
+    sed '
+      s/\(python setup.py test\)/#\1/
+    '
+)"
