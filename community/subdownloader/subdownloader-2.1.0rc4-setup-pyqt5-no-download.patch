@@ -1,0 +1,13 @@
+diff -rauN subdownloader-2.1.0rc4/setup.py subdownloader-2.1.0rc4-setup-pyqt5-no-download-patch/setup.py
+--- subdownloader-2.1.0rc4/setup.py	2018-03-22 02:01:17.000000000 +0100
++++ subdownloader-2.1.0rc4-setup-pyqt5-no-download-patch/setup.py	2018-05-24 15:41:59.570384198 +0200
+@@ -21,8 +21,7 @@
+     "argparse >= 1.3.0",
+     "argcomplete >= 1.7.0",
+     "langdetect >= 1.0.7",
+-    "pymediainfo >= 2.1.6",
+-    "PyQt5 >= 5.0.0",
++    "pymediainfo >= 2.1.6"
+ ]
+ 
+ setup_requires = [

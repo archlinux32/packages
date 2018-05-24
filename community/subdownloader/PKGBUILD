@@ -1,10 +1,11 @@
-# Tests download a 64-bit Qt5 Python package from https://files.pythonhosted.org
+# Tests download a 64-bit Qt5 Python package from https://files.pythonhosted.org,
+# we can actually rely on the python-pyqt5 Archlinux package giving us that. :-)
 # (see https://github.com/subdownloader/subdownloader/issues/30)
-# => disabling all tests for now
 
-eval "$(
-  declare -f check | \
-    sed '
-      s/\(python setup.py test\)/#\1/
-    '
-)"
+source+=(subdownloader-2.1.0rc4-setup-pyqt5-no-download.patch)
+sha512sums+=('95f12cc3ffa474db00446adfb830935aaa2c626d5e15b78c94c7775ff048ed4871ea55fbc64cea7302007745beaaa02452ab3770ca6a41d9db36deddde0d901a')
+
+prepare( ) {
+   cd $pkgname-$pkgver
+   patch  -Np1 < "$srcdir/subdownloader-2.1.0rc4-setup-pyqt5-no-download.patch"
+}
