@@ -5,3 +5,21 @@ eval "$(
       s,https://bugs.archlinux.org/,https://bugs.archlinux32.org/,
     '
 )"
+
+# segfaults in ld of binutils 2.30 needs the binutils_2_30 branch
+# for now, see https://sourceware.org/bugzilla/show_bug.cgi?id=23194
+# this patch was done by diffing the branch against the tag and removing
+# some conflicts, also 0003-PR22836-r-s-doesnt-work-with-g3-using-GCC-7.patch
+# needs disabling because it has already been cherry-picked into the branch.
+# cherry-picking onlt the fix for P23194 leads to assertion violations in
+# the GOT, so this was not done.
+source+=(binutils-2.30-branch.patch)
+md5sums+=('a5ba9fc9de327b2eff071e19429c6e67')
+
+eval "$(
+  declare -f prepare | \
+    sed '
+      s/.*0003-PR22836/#\0/
+      /0003-PR22836/a patch -p1 -i ${srcdir}/binutils-2.30-branch.patch
+    '
+)"
