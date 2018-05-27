@@ -1,0 +1,8 @@
+# x265 has hand-optimized assembly breaking with arch i686, disabled for now
+# (reported as https://github.com/HandBrake/HandBrake/issues/1363)
+eval "$(
+  declare -f build | \
+    sed '
+      s@./configure@\0 --arch=i686 --disable-x265@
+    '
+)"
