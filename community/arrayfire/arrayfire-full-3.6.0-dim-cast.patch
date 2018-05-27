@@ -1,0 +1,36 @@
+diff -rauN arrayfire-full-3.6.0/src/api/c/homography.cpp arrayfire-full-3.6.0-dim-cast-patch/src/api/c/homography.cpp
+--- arrayfire-full-3.6.0/src/api/c/homography.cpp	2018-05-02 20:53:08.000000000 +0200
++++ arrayfire-full-3.6.0-dim-cast-patch/src/api/c/homography.cpp	2018-05-26 17:12:16.120826525 +0200
+@@ -30,7 +30,7 @@
+     Array<T> bestH = createEmptyArray<T>(af::dim4(3, 3));
+     af_array initial;
+     unsigned d = (iterations + 256 - 1) / 256;
+-    dim_t rdims[] = {4, d * 256};
++    dim_t rdims[] = {4, static_cast<dim_t>(d) * 256};
+     AF_CHECK(af_randu(&initial, 2, rdims, f32));
+     inliers = homography<T>(bestH,
+                             getArray<float>(x_src), getArray<float>(y_src),
+diff -rauN arrayfire-full-3.6.0/src/backend/opencl/kernel/ireduce.hpp arrayfire-full-3.6.0-dim-cast-patch/src/backend/opencl/kernel/ireduce.hpp
+--- arrayfire-full-3.6.0/src/backend/opencl/kernel/ireduce.hpp	2018-05-02 20:53:08.000000000 +0200
++++ arrayfire-full-3.6.0-dim-cast-patch/src/backend/opencl/kernel/ireduce.hpp	2018-05-26 17:11:37.880234104 +0200
+@@ -361,7 +361,7 @@
+ 
+             uint groups_x = divup(in.info.dims[0], threads_x * REPEAT);
+             uint groups_y = divup(in.info.dims[1], threads_y);
+-            Array<T> tmp = createEmptyArray<T>({groups_x, in.info.dims[1], in.info.dims[2], in.info.dims[3]});
++            Array<T> tmp = createEmptyArray<T>({static_cast<dim_t>(groups_x), in.info.dims[1], in.info.dims[2], in.info.dims[3]});
+ 
+             int tmp_elements = tmp.elements();
+             cl::Buffer *tidx = bufferAlloc(tmp_elements * sizeof(uint));
+diff -rauN arrayfire-full-3.6.0/src/backend/opencl/kernel/reduce.hpp arrayfire-full-3.6.0-dim-cast-patch/src/backend/opencl/kernel/reduce.hpp
+--- arrayfire-full-3.6.0/src/backend/opencl/kernel/reduce.hpp	2018-05-02 20:53:08.000000000 +0200
++++ arrayfire-full-3.6.0-dim-cast-patch/src/backend/opencl/kernel/reduce.hpp	2018-05-26 17:11:55.600508641 +0200
+@@ -301,7 +301,7 @@
+ 
+             uint groups_x = divup(in.info.dims[0], threads_x * REPEAT);
+             uint groups_y = divup(in.info.dims[1], threads_y);
+-            Array<To> tmp = createEmptyArray<To>({groups_x, in.info.dims[1], in.info.dims[2], in.info.dims[3]});
++            Array<To> tmp = createEmptyArray<To>({static_cast<dim_t>(groups_x), in.info.dims[1], in.info.dims[2], in.info.dims[3]});
+ 
+             int tmp_elements = tmp.elements();
+ 

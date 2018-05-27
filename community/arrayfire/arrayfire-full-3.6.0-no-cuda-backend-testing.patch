@@ -1,0 +1,16 @@
+diff -rauN arrayfire-full-3.6.0/test/CMakeLists.txt arrayfire-full-3.6.0-no-cuda-backend-testing-patch/test/CMakeLists.txt
+--- arrayfire-full-3.6.0/test/CMakeLists.txt	2018-05-02 20:53:08.000000000 +0200
++++ arrayfire-full-3.6.0-no-cuda-backend-testing-patch/test/CMakeLists.txt	2018-05-26 17:23:02.097495405 +0200
+@@ -49,9 +49,9 @@
+   list(APPEND enabled_backends "cuda")
+ endif(AF_BUILD_CUDA)
+ 
+-if(AF_BUILD_OPENCL)
+-  list(APPEND enabled_backends "opencl")
+-endif(AF_BUILD_OPENCL)
++#if(AF_BUILD_OPENCL)
++#  list(APPEND enabled_backends "opencl")
++#endif(AF_BUILD_OPENCL)
+ 
+ if(AF_BUILD_UNIFIED)
+   list(APPEND enabled_backends "unified")

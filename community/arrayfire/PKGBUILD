@@ -1,5 +1,7 @@
+# modern cuda is no longer available for 32-bit
 makedepends=(${makedepends[@]//cuda/})
 
+# force 32-bit compilation
 eval "$(
   declare -f build | \
     sed '
@@ -8,5 +10,24 @@ eval "$(
     export CFLAGS+=" -m32" \
     export CXXFLAGS+=" -m32"
       }
+    '
+)"
+
+# compilation issues around dim_t casts, see https://github.com/arrayfire/arrayfire/issues/2161
+source+=(arrayfire-full-3.6.0-dim-cast.patch)
+sha512sums+=('0db9eaac34c0d1126bb771ed62bbafe9aef0373ef947f54f308ed943f77cb81e543fbe9c107a781d76168fbb8effb6a4c3005b7c6dae4a2a0395ed26c9a2f33d')
+eval "$(
+  declare -f prepare | \
+    sed '
+      /cd /a patch -Np1 -i ${srcdir}/arrayfire-full-3.6.0-dim-cast.patch
+    '
+)"
+
+source+=(arrayfire-full-3.6.0-no-cuda-backend-testing.patch)
+sha512sums+=('7c5912ecf59932a4c00f859190174b5b88f01010d131dfef4b013940543f157698d048297eb8c86e1d5289df8f7eb6d769fd39f069b7bf3262800ceca98d09fc')
+eval "$(
+  declare -f prepare | \
+    sed '
+      /cd /a patch -Np1 -i ${srcdir}/arrayfire-full-3.6.0-no-cuda-backend-testing.patch
     '
 )"
