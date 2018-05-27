@@ -1,0 +1,6 @@
+eval "$(
+  declare -f package | \
+    sed '
+      s@mv "${pkgdir}/usr/lib64" "${pkgdir}/usr/lib"@#\0@
+    '
+)"
