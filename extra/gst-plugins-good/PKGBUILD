@@ -1,0 +1,9 @@
+# fixed upstreams, see https://bugzilla.gnome.org/show_bug.cgi?id=796429
+source+=(gst-plugins-good-1.14.1-fix-elements-rtpstorage-BUG796429.patch)
+sha256sums+=('13fb05a15dcf9b3141e71fee6158ddcb59e5a60aba83cd47a58188e5ad93449a')
+eval "$(
+  declare -f prepare | \
+    sed '
+      /cd /a patch -Np1 -i ${srcdir}/gst-plugins-good-1.14.1-fix-elements-rtpstorage-BUG796429.patch
+    '
+)"
