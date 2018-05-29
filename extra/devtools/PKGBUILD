@@ -1,6 +1,6 @@
 # we override almost everything
 
-pkgver=20180516.1
+pkgver=20180528
 pkgrel=1
 pkgdesc='Tools for Arch Linux 32 package maintainers'
 license=('GPL')
@@ -8,7 +8,7 @@ url='https://github.com/archlinux32/devtools32/'
 source=(
   "https://github.com/archlinux32/${pkgname}32/releases/download/v$pkgver/${pkgname}32-v$pkgver.tar.xz"{,.sig}
 )
-sha512sums=('ab0455feadb859040e84103172aabddf04dccafceb853c2fdbef481f3d1263566bc2d4158f1892c933ff8a62c85e5f227bd86d3cf1fd0d5d6c4775e03baa2b5a'
+sha512sums=('b1b8b7fe2e4d1e33a39b011137c4b8350e45d99f1d665cd7d4202b44c4d16ae5d74f291c2a981f67223cfbdeada5825c1848f7b3d20796df2c652afc04211887'
             'SKIP')
 validpgpkeys=(
   '5FDCA472AB93292BC678FD59255A76DB9A12601A'
