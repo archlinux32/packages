@@ -1,1 +1,11 @@
+# upstream git revision: 10846e019dc129013c3da72d0bc24a31ef7f3637
+
 depends+=(archlinux32-keyring)
+
+# fail if upstream changes makepkg.conf or pacman.conf
+if [ "${sha256sums[2]}" = '95b3b2416402059cf6acf3e046082e7ce261e2b88629231dbf579a4200d8a63b' ]; then
+  sha256sums[2]='240f25727c5ac21feeb14fb1d4c03b09d2cf0a43c1d02b042376c12e34b1f8ef'
+fi
+if [ "${sha256sums[3]}" = '650ddad24cad6afc4aecb4829cb8f06b9acb70c10a44f756fe8bd279949b518e' ]; then
+  sha256sums[3]='d1c3e5f9b7259e401ab121aff335531452d23dc67d9e6c2f464771d25f11058a'
+fi
