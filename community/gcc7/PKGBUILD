@@ -1,0 +1,8 @@
+# something is missing - no idea what and why :-D
+
+eval "$(
+  declare -f package_gcc7-libs | \
+    sed '
+      /libgcc_s/ d
+    '
+)"
