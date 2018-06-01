@@ -1,0 +1,6 @@
+# fixes:
+# [ 77%] Generating gstqtvideosinkmarshal.h, gstqtvideosinkmarshal.c
+# /usr/bin/env: ‘/usr/bin/python’: No such file or directory
+# make[2]: *** [src/elements/gstqtvideosink/CMakeFiles/gstkamosoqt5videosink.dir/build.make:62: src/elements/gstqtvideosink/gstqtvideosinkmarshal.h] Error 127
+# should also happen upstream, actually
+makedepends+=(python)
