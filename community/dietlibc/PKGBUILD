@@ -1,5 +1,5 @@
-source+=("dietlib-i386-socketcall-also-with-pic.patch")
-md5sums+=('cc99f41e0ac6ef641d4a96de9161b997')
+source+=('dietlib-i386-socketcall-also-with-pic.patch')
+sha256sums+=('2fabb9922b8a9d2ceafb8127e2dd8271b01e18ce61d61804cc1be8edd0f0d5e9')
 prepare() {
   cd "$srcdir"/$pkgname-$pkgver
   patch -p1 -i "${srcdir}"/dietlib-i386-socketcall-also-with-pic.patch
