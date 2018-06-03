@@ -1,6 +1,6 @@
-diff -rauN qtwebengine-everywhere-src-5.11.0/src/3rdparty/chromium/mojo/public/c/system/macros.h qtwebengine-everywhere-src-5.11.0-chromium-64bit-alignment-patch/src/3rdparty/chromium/mojo/public/c/system/macros.h
---- qtwebengine-everywhere-src-5.11.0/src/3rdparty/chromium/mojo/public/c/system/macros.h	2018-06-03 09:46:38.408293369 +0200
-+++ qtwebengine-everywhere-src-5.11.0-chromium-64bit-alignment-patch/src/3rdparty/chromium/mojo/public/c/system/macros.h	2018-06-03 09:46:54.734960038 +0200
+diff -rauN chromium/mojo/public/c/system/macros.h chromium/mojo/public/c/system/macros.h
+--- chromium/mojo/public/c/system/macros.h	2018-06-03 09:46:38.408293369 +0200
++++ chromium/mojo/public/c/system/macros.h	2018-06-03 09:46:54.734960038 +0200
 @@ -18,7 +18,13 @@
  #endif
  

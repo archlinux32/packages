@@ -7,7 +7,7 @@ eval "$(
 
 # see https://src.fedoraproject.org/cgit/rpms/chromium.git/tree/chromium-66.0.3359.170-gcc8-alignof.patch
 source+=('qtwebengine-everywhere-src-5.11.0-chromium-64bit-alignment.patch')
-sha256sums+=('064cdd255b3a8918467cb4cddd5db34a4d604cae8f810463be1d098ed733d2f1')
+sha256sums+=('f1d810bf237ea3ce85803eb4665273b2d2bfa8a2a19521d5fa05568cec5d8cba')
 
 eval "$(
   declare -f prepare | \
