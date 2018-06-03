@@ -1,18 +1,21 @@
 # Maintainer: Erich Eckner <deep42thought@archlinux32.org>
 pkgname=archlinux32-keyring
-pkgver=20180411
+pkgver=20180603
 pkgrel=1
 pkgdesc='Arch Linux 32 PGP keyring'
 arch=('any')
 url='https://archlinux32.org'
 license=('GPL')
+install="${pkgname}.install"
 conflicts=('archlinux32-keyring-transition')
 replaces=('archlinux32-keyring-transition')
-install="${pkgname}.install"
 source=("https://github.com/archlinux32/${pkgname}/releases/download/v${pkgver}/${pkgname}-v${pkgver}.tar.xz"{,.sig})
-sha512sums=('e1bb190ea3895ecff789eeb25b35758704d2528f46cf2861c7cd89250eca9396e22d9be2bf42dd3fda2dba0c858216eca51d93d7a5ce7e84691a3965fa9aa63e'
+sha512sums=('486af8dc512cf1c53cf9a5e43d40982cc82e3b795a9a41f15770be7dc7366db944cb981fb374aa7b484c797142fd75aaf21222d5f6088e64d54d0a7ebab1eecc'
             'SKIP')
-validpgpkeys=('5FDCA472AB93292BC678FD59255A76DB9A12601A') # Erich Eckner (just to sign arch packages) <arch@eckner.net>
+validpgpkeys=(
+  '5FDCA472AB93292BC678FD59255A76DB9A12601A'
+  'DE9F7688CACF04FEB81A6C590AEEC90755DA7B5A'
+)
 
 package() {
     cd "${srcdir}/${pkgname}-v${pkgver}"
