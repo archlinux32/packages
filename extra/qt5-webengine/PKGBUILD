@@ -4,3 +4,16 @@ eval "$(
       s/ -webengine-icu//
     '
 )"
+
+# see https://src.fedoraproject.org/cgit/rpms/chromium.git/tree/chromium-66.0.3359.170-gcc8-alignof.patch
+source+=('qtwebengine-everywhere-src-5.11.0-chromium-64bit-alignment.patch')
+sha256sums+=('064cdd255b3a8918467cb4cddd5db34a4d604cae8f810463be1d098ed733d2f1')
+
+eval "$(
+  declare -f prepare | \
+    sed '
+      /ffmpeg4.patch/ a patch -Np1 -i "${srcdir}"/qtwebengine-everywhere-src-5.11.0-chromium-64bit-alignment.patch
+    '
+)"
+
+
