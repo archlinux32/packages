@@ -1,5 +1,6 @@
 # packages
 This repository contains the customizations to packages needed to port them to i686 and/or our environment, as well as other package related informations.
+It is currently hosted on https://git.archlinux32.org/archlinux32/packages.
 
 * There are subdirectories `repository/package` which contain new packages and customizations for existent packages to compile for i686 or adopt to our environment.
 In case, the files therein exist in the respective original package, the respective original package files are either appended (in case of `PKGBUILD`) or overwritten (for other files).
