@@ -3,15 +3,15 @@
 pkgver=34
 pkgrel=1
 license=('GPL')
-url='https://github.com/archlinux32/archiso32'
-source=("$pkgname-$pkgver.tar.gz::https://github.com/archlinux32/${pkgname}32/archive/i686-v${pkgver}.tar.gz")
+url='https://git.archlinux32.org/archlinux32/archiso32'
+source=("$pkgname-$pkgver.tar.gz::https://git.archlinux32.org/archlinux32/${pkgname}32/archive/i686-v${pkgver}.tar.gz")
 unset sha256sums
-sha512sums=('8337aac52542310b8e1f14e6f5e11e8973b4fd778d51eeb7bb962c7817c9399a0a23097c18f69e5a4a1f242a6daf8fdd7d65c75bfc2e0003ca922e2839f28e14')
+sha512sums=('88439b6cbdc24a330a2d95227ce60e8a7f5d50a081ed688ebae1f9292196c9036da8570264100504f6799b90977e43adc840668c3385f14ef93c41cba28b6d33')
 unset validpgpkeys
 
 eval "$(
   declare -f prepare build check package | \
     sed '
-      s/\(\${pkgname}\)-/\132-i686-v/
+      s/\(\${pkgname}\)-\${pkgver}/\132/
     '
 )"

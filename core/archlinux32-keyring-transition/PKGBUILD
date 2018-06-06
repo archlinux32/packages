@@ -9,12 +9,10 @@ url='https://archlinux32.org'
 license=('GPL')
 provides=('archlinux32-keyring')
 install="${pkgname}.install"
-source=("https://github.com/archlinux32/${_pkgname}/releases/download/v${pkgver}/${_pkgname}-v${pkgver}.tar.xz"{,.sig})
-sha512sums=('e1bb190ea3895ecff789eeb25b35758704d2528f46cf2861c7cd89250eca9396e22d9be2bf42dd3fda2dba0c858216eca51d93d7a5ce7e84691a3965fa9aa63e'
-            'SKIP')
-validpgpkeys=('5FDCA472AB93292BC678FD59255A76DB9A12601A') # Erich Eckner (just to sign arch packages) <arch@eckner.net>
+source=("https://git.archlinux32.org/archlinux32/${_pkgname}/archive/v${pkgver}.tar.gz")
+sha512sums=('c5480421084e8271760feecc418e3c2314b2256f68e00e98c2f73bfd18da96a2d6769fb5457cfce490985807cdca76f018b0b9e48cd64fb7c536642410d808f7')
 
 package() {
-    cd "${srcdir}/${_pkgname}-v${pkgver}"
+    cd "${srcdir}/${_pkgname}"
     make PREFIX=/usr DESTDIR=${pkgdir} install
 }

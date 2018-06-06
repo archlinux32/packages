@@ -2,10 +2,10 @@
 
 pkgver=0.0
 pkgrel=1
-url='https://github.com/archlinux32/asp32/'
+url='https://git.archlinux32.org/archlinux32/asp32/'
 license=(MIT)
-source=("$pkgname-$pkgver.tar.gz::https://github.com/archlinux32/${pkgname}32/archive/v$pkgver.tar.gz")
-sha512sums=('2521125cc49139700dae77b52ffc0db339ddbf1347d37f49e03b896214a61c624fa70c530d4254b3f26c92b4cd6e3fcea0ebd4cee0d1e14e16a40a9c6a702a67')
+source=("$pkgname-$pkgver.tar.gz::https://git.archlinux32.org/archlinux32/${pkgname}32/archive/v$pkgver.tar.gz")
+sha512sums=('82b7129b75fa3c9d7f86f6f0e76b866ee6b0ef7457755830b710eb9149165748562e72e578f1a9c623baacf58671059af7293f7b8657f69cc63fe281ec7ce1a4')
 
 unset sha256sums
 unset validpgpkeys
@@ -13,6 +13,6 @@ unset validpgpkeys
 eval "$(
   declare -f prepare build check package | \
     sed '
-       s/\${pkgname}\|asp/\032/
+       s/\('"${pkgname}"'\)-\$pkgver/\132/
     '
 )"
